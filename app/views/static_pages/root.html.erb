@@ -9,7 +9,14 @@
 <body ng-app="flapperNews" ng-controller="MainCtrl">
   <div>
     {{test}}
-    <div ng-repeat="post in posts | orderBy: '-upvotes'">
+    <br>
+    <br> sort by:
+    <button ng-click="sortMethod='title'">title</button>
+    <button ng-click="sortMethod='upvotes'">upvotes</button>
+    <br>
+    <br>
+
+    <div ng-repeat="post in posts | orderBy: sortMethod">
       {{post.title}} - upvotes: {{post.upvotes}}
     </div>
   </div>
