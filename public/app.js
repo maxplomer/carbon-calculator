@@ -20,15 +20,16 @@ angular.module('flapperNews', [])
         upvotes: 4
       }];
       $scope.addPost = function() {
-        //Prevent a user from submitting a post with a blank title
         if (!$scope.title || $scope.title === '') {
           return;
         }
         $scope.posts.push({
           title: $scope.title,
+          link: $scope.link,
           upvotes: 0
         });
         $scope.title = '';
+        $scope.link = '';
       };
       $scope.incrementUpvotes = function(post) {
         post.upvotes += 1;
