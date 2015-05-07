@@ -1,17 +1,32 @@
 angular.module('carbonCalculator', ['ui.router'])
-  .factory('posts', [function(){
+  .config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+
+      $stateProvider
+        .state('home', {
+          url: '/home',
+          templateUrl: '/home.html',
+          controller: 'MainCtrl'
+        });
+
+      $urlRouterProvider.otherwise('home');
+    }
+  ])
+  .factory('posts', [function() {
     var o = {
       posts: []
     };
-  return o;
+    return o;
   }])
   .controller('MainCtrl', [
     '$scope',
     'posts',
-    function($scope, posts){
+    function($scope, posts) {
 
       $scope.posts = posts.posts;
-      
+
       $scope.posts = [{
         title: 'post 1',
         upvotes: 5
