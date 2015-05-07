@@ -1,8 +1,17 @@
 angular.module('carbonCalculator', [])
+  .factory('posts', [function(){
+    var o = {
+      posts: []
+    };
+  return o;
+  }])
   .controller('MainCtrl', [
     '$scope',
-    function($scope) {
+    'posts',
+    function($scope, posts){
 
+      $scope.posts = posts.posts;
+      
       $scope.posts = [{
         title: 'post 1',
         upvotes: 5
@@ -36,6 +45,6 @@ angular.module('carbonCalculator', [])
       $scope.incrementUpvotes = function(post) {
         post.upvotes += 1;
       };
-      
+
     }
   ]);
