@@ -1,4 +1,4 @@
-angular.module('carbonCalculator', [])
+angular.module('carbonCalculator', ['ui.router'])
   .factory('posts', [function(){
     var o = {
       posts: []
