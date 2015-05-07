@@ -17,9 +17,11 @@ angular.module('carbonCalculator', ['ui.router'])
         });
 
       $urlRouterProvider.otherwise('home');
+      
     }
   ])
   .factory('posts', [function() {
+
     var o = {
       posts: [{
         title: 'sample post',
@@ -32,7 +34,9 @@ angular.module('carbonCalculator', ['ui.router'])
         }]
       }]
     };
+
     return o;
+
   }])
   .controller('MainCtrl', [
     '$scope',
