@@ -1,0 +1,16 @@
+{
+  "name": "carbon-calculator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/maxplomer/carbon-calculator",
+  "authors": [
+    "Max Plomer <maxplomer@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
