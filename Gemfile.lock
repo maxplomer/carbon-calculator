@@ -25,6 +25,10 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    angular-rails-templates (0.2.0)
+      railties (>= 3.1)
+      sprockets (~> 2)
+      tilt
     arel (4.0.2)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
@@ -71,7 +75,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    rack (1.5.2)
+    rack (1.5.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.0.2)
@@ -126,6 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
   bcrypt-ruby
   better_errors
   binding_of_caller
