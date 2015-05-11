@@ -35,3 +35,5 @@ group :development do
 end
 
 gem 'angular-rails-templates'
+
+gem 'rails_12factor'
