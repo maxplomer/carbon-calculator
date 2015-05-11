@@ -9,12 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- 
+ *= require bootstrap/dist/css/bootstrap
  *= require_tree .
  */
 
 
 .glyphicon-thumbs-up {
   cursor: pointer;
-  border: 1px solid yellow;
 }
