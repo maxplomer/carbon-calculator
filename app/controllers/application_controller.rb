@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  respond_to :json
+
   def current_user
     # fetches the user we've logged in as
     return nil if self.session[:session_token].nil?
