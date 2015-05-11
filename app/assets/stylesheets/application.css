@@ -15,5 +15,6 @@
 
 
 .glyphicon-thumbs-up {
-  cursor: pointer
+  cursor: pointer;
+  border: 1px solid yellow;
 }
