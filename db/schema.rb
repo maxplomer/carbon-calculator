@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150511162458) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "link"
-    t.integer  "upvotes"
+    t.integer  "upvotes",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
