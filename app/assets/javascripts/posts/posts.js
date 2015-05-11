@@ -1,5 +1,5 @@
 angular.module('carbonCalculator')
-  .factory('posts', [function() {
+  .factory('posts', ['$http', function($http) {
 
     var o = {
       posts: [{
@@ -12,6 +12,12 @@ angular.module('carbonCalculator')
           upvotes: 0
         }]
       }]
+    };
+
+    o.getAll = function() {
+      return $http.get('/posts.json').success(function(data){
+        angular.copy(data, o.posts);
+      });
     };
 
     return o;
