@@ -29,6 +29,8 @@ GEM
       railties (>= 3.1)
       sprockets (~> 2)
       tilt
+    angular_rails_csrf (1.0.3)
+      rails (>= 3, < 5)
     arel (4.0.2)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
@@ -134,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  angular_rails_csrf
   bcrypt-ruby
   better_errors
   binding_of_caller
