@@ -28,6 +28,10 @@ angular.module('carbonCalculator')
       });
     };
 
+    o.addComment = function(id, comment) {
+      return $http.post('/posts/' + id + '/comments.json', comment);
+    };
+
     return o;
 
   }]);
