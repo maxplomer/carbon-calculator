@@ -1,7 +1,6 @@
 angular.module('carbonCalculator')
   .controller('PostsCtrl', [
     '$scope',
-    '$stateParams',
     'posts',
     'post',
     function($scope, posts, post) {
