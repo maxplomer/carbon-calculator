@@ -1,18 +1,7 @@
 angular.module('carbonCalculator')
   .factory('posts', ['$http', function($http) {
 
-    var o = {
-      posts: [{
-        title: 'sample post',
-        link: '',
-        upvotes: 0,
-        comments: [{
-          author: 'Joe',
-          body: 'Cool post!',
-          upvotes: 0
-        }]
-      }]
-    };
+    var o = { posts: [] };
 
     o.getAll = function() {
       return $http.get('/posts.json').success(function(data){
