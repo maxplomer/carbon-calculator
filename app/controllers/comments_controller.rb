@@ -2,7 +2,11 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    comment = post.comments.create(comment_params)
+    comment = post.comments.create(
+      comment_params.merge({
+        upvotes:0
+      })
+    )
     respond_with post, comment
   end
 
