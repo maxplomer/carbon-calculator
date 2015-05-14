@@ -37,3 +37,5 @@ gem 'angular-rails-templates'
 gem 'rails_12factor'
 
 gem 'angular_rails_csrf'
+
+gem 'devise', '~> 3.4.0'
