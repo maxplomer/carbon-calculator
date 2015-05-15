@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   def create
     respond_with Post.create(
       post_params.merge({
-        upvotes:0
+        upvotes:0,
+        user_id: current_user.id
       })
     )
   end
