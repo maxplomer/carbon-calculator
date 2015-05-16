@@ -16,9 +16,5 @@ angular.module('carbonCalculator')
         $scope.link = '';
       };
 
-      $scope.incrementUpvotes = function(post) {
-        posts.upvote(post);
-      };
-
     }
   ]);
