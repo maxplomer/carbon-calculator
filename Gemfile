@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
+# Use postgres as the database for Active Record
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -39,3 +39,5 @@ gem 'rails_12factor'
 gem 'angular_rails_csrf'
 
 gem 'devise', '~> 3.4.0'
+
+gem 'active_model_serializers', '~> 0.8.3'
