@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:create, :upvote]
+  before_filter :authenticate_user!, only: [:create]
 
   def index
     respond_with Post.all
@@ -21,7 +21,12 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:link, :title)
+    params.require(:post).permit(
+      :link, 
+      :title,
+      :gal_of_gas_per_day,
+      :gal_of_hotwater_per_day
+    )
   end
 
 end

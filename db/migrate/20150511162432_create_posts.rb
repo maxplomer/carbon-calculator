@@ -3,6 +3,8 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :link
+      t.float :gal_of_gas_per_day
+      t.float :gal_of_hotwater_per_day
 
       t.timestamps
     end
