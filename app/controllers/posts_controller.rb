@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   def create
     respond_with Post.create(
       post_params.merge({
-        upvotes:0,
         user_id: current_user.id
       })
     )
@@ -17,13 +16,6 @@ class PostsController < ApplicationController
 
   def show
     respond_with Post.find(params[:id])
-  end
-
-  def upvote
-    post = Post.find(params[:id])
-    post.increment!(:upvotes)
-
-    respond_with post
   end
 
   private
