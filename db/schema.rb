@@ -17,10 +17,9 @@ ActiveRecord::Schema.define(version: 20150515193043) do
   enable_extension "plpgsql"
 
   create_table "posts", force: true do |t|
-    t.string   "title"
-    t.string   "link"
     t.float    "gal_of_gas_per_day"
     t.float    "gal_of_hotwater_per_day"
+    t.float    "kwh_of_energy_per_day"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

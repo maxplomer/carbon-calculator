@@ -1,11 +1,11 @@
 angular.module('carbonCalculator')
   .factory('posts', ['$http', function($http) {
 
-    var o = { posts: [] };
+    var o = {};
 
     o.getAll = function() {
       return $http.get('/posts.json').success(function(data){
-        angular.copy(data.posts, o.posts);
+        angular.copy(data, o);
       });
     };
 

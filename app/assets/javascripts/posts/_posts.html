@@ -1,11 +1,6 @@
 <div class="page-header">
   <h3>
-    <a ng-show="post.link" href="{{post.link}}">
-      {{post.title}}
-    </a>
-    <span ng-hide="post.link">
-      {{post.title}}
-    </span>
+    Report for 
   </h3>
 </div>
 
@@ -17,6 +12,10 @@
   <tr>
     <td>Gallons of Hot Water per Day</td>
     <td>{{post.gal_of_hotwater_per_day}}</td>
+  </tr>
+  <tr>
+    <td>kWh of Energy per Day</td>
+    <td>{{post.kwh_of_energy_per_day}}</td>
   </tr>
   <tr style="font-weight:bold">
     <td>CO<sub>2</sub> Output</td>
