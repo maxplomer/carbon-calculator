@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
 
   def index
-    respond_with Post.all
+    render json: Post.all
   end
 
   def create
-    respond_with Post.create(
+    render json: Post.create(
       post_params.merge({
         user_id: current_user.id
       })
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with Post.find(params[:id])
+    render json: Post.find(params[:id])
   end
 
   private
