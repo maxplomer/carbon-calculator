@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.float :kwh_of_energy_per_day
       t.string :energy_source
       t.float :lbs_of_meat_per_day
+      t.float :airline_miles_per_year
 
       t.timestamps
     end

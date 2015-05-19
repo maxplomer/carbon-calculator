@@ -15,7 +15,8 @@ angular.module('carbonCalculator')
           hotwater_source: $scope.hotwater_source,
           kwh_of_energy_per_day: $scope.kwh_of_energy_per_day,
           energy_source: $scope.energy_source,
-          lbs_of_meat_per_day: $scope.lbs_of_meat_per_day
+          lbs_of_meat_per_day: $scope.lbs_of_meat_per_day,
+          airline_miles_per_year: $scope.airline_miles_per_year
         });
 
         $scope.gal_of_gas_per_day = '';
@@ -24,6 +25,7 @@ angular.module('carbonCalculator')
         $scope.kwh_of_energy_per_day = '';
         $scope.energy_source = '';
         $scope.lbs_of_meat_per_day = '';
+        $scope.airline_miles_per_year = '';
       };
 
     }

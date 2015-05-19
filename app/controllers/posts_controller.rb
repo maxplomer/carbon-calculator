@@ -27,7 +27,8 @@ class PostsController < ApplicationController
       :hotwater_source,
       :kwh_of_energy_per_day,
       :energy_source,
-      :lbs_of_meat_per_day
+      :lbs_of_meat_per_day,
+      :airline_miles_per_year
     )
   end
 
