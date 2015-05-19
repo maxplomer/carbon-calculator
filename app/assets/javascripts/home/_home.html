@@ -72,5 +72,9 @@ sort by:
       <input type="radio" ng-model="energy_source" name="energy_source" value="Nuclear" required> Nuclear
     </label>
   </div>
+  <div class="form-group">
+    <label>Lbs of Meat per Day</label>
+    <input type="number" step="0.1" class="form-control" placeholder="Lbs of Meat per Day" ng-model="lbs_of_meat_per_day" required></input>
+  </div>
   <button type="submit" class="btn btn-primary">Post</button>
 </form>
