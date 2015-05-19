@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  include Co2output
 
   def co2_output
     result = self.gal_of_gas_per_day 
