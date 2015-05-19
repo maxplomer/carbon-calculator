@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150515193043) do
   create_table "posts", force: true do |t|
     t.float    "gal_of_gas_per_day"
     t.float    "gal_of_hotwater_per_day"
+    t.string   "hotwater_source"
     t.float    "kwh_of_energy_per_day"
     t.datetime "created_at"
     t.datetime "updated_at"
