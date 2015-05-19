@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150515193043) do
     t.float    "gal_of_hotwater_per_day"
     t.string   "hotwater_source"
     t.float    "kwh_of_energy_per_day"
+    t.string   "energy_source"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

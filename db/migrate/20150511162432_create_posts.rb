@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.float :gal_of_hotwater_per_day
       t.string :hotwater_source
       t.float :kwh_of_energy_per_day
+      t.string :energy_source
 
       t.timestamps
     end
