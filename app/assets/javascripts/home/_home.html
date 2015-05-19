@@ -36,7 +36,16 @@ sort by:
     <input type="number" step="0.1" class="form-control" placeholder="Gallons of Hot Water per Day" ng-model="gal_of_hotwater_per_day" required></input>
   </div>
   <div class="form-group">
-    <label>kWh of Energy per Day</label>
+    <label>Hot Water Source</label><br>
+    <label class="radio-inline">
+      <input type="radio" ng-model="hotwater_source" name="hotwater_source" value="oil" required> Oil
+    </label>
+    <label class="radio-inline">
+      <input type="radio" ng-model="hotwater_source" name="hotwater_source" value="electric" required> Electric
+    </label>
+  </div>
+  <div class="form-group">
+    <label>kWh of Energy per Day (excluding electric hot water)</label>
     <input type="number" step="0.1" class="form-control" placeholder="kWh of Energy per Day" ng-model="kwh_of_energy_per_day" required></input>
   </div>
   <button type="submit" class="btn btn-primary">Post</button>
