@@ -1,15 +1,17 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  include Co2output
+  include Co2outputFunctions
 
   def co2_output
-    result = self.gal_of_gas_per_day 
-    result += self.gal_of_hotwater_per_day 
-    result += self.kwh_of_energy_per_day 
-    result += self.lbs_of_meat_per_day
-    result += self.airline_miles_per_year
+    calc = Co2outputCalculation.new
 
-    result
+    calc.gal_of_gas_per_day = self.gal_of_gas_per_day 
+    calc.gal_of_hotwater_per_day = self.gal_of_hotwater_per_day 
+    calc.kwh_of_energy_per_day = self.kwh_of_energy_per_day 
+    calc.lbs_of_meat_per_day = self.lbs_of_meat_per_day
+    calc.airline_miles_per_year = self.airline_miles_per_year
+
+    calc.result
   end
 
   def formatted_created_at

@@ -1,4 +1,4 @@
-module Co2output
+module Co2outputFunctions
  
   class Co2outputCalculation
     attr_writer :gal_of_gas_per_day, :gal_of_hotwater_per_day, :hotwater_source
@@ -13,6 +13,10 @@ module Co2output
       @energy_source
       @lbs_of_meat_per_day
       @airline_miles_per_year
+    end
+
+    def result
+      @gal_of_gas_per_day + @gal_of_hotwater_per_day + @kwh_of_energy_per_day + @lbs_of_meat_per_day + @airline_miles_per_year
     end
   end
 
