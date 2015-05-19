@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
+  include Co2output
+
   belongs_to :user
-  include Co2outputFunctions
 
   def co2_output
     calc = Co2outputCalculation.new

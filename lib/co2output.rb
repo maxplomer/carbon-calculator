@@ -1,4 +1,4 @@
-module Co2outputFunctions
+module Co2output
  
   class Co2outputCalculation
     attr_writer :gal_of_gas_per_day, :gal_of_hotwater_per_day, :hotwater_source
