@@ -37,15 +37,13 @@
 
 #home-navbar-col {
   border: 1px solid white;  
-  min-width: 540px;
+  min-width: 450px;
   text-align: center;
 }
 
 #sign-in-button {
   float: right;
-  margin-top: 27px;
-  margin-left: 20px;
-  display: none;
+  margin: 27px 20px 0 20px;
 }
 
 
