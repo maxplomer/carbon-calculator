@@ -13,6 +13,29 @@
  */
 
 
+
+
+#carbon-logo {
+  color: rgb(21,110,216);	
+  font-size: 32px;
+  margin: auto;
+  margin-top: 20px;
+  width: 400px;
+}
+
+#home-navbar {
+  height: 77px;
+  border-bottom: 2px solid lightgrey;
+}
+
+#sign-in-button {
+  float: right;
+  margin-top: 27px;
+}
+
+
+
+/*
 .glyphicon-thumbs-up {
   cursor: pointer;
-}
+}*/
