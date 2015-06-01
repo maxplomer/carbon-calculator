@@ -17,10 +17,12 @@
 </head>
 
 <body ng-app="carbonCalculator" ng-controller="MainCtrl">
-    <div style="width: 1000px; margin: auto;">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" style="border: 2px solid green">
       <div ng-include="'nav/_nav.html'"></div>
       <ui-view></ui-view>
     </div>
+  </div>
 </body>
 
 </html>
