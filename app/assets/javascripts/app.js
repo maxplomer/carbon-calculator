@@ -16,7 +16,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
           },
           onEnter: ['$state', 'Auth', function($state, Auth) {
             Auth.currentUser().then(function (){
-              $state.go('home');
+              $state.go('dashboard');
             })
           }]
         })
@@ -29,6 +29,11 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
               return posts.get($stateParams.id);
             }]
           }
+        })
+        .state('dashboard', {
+          url: 'home',
+          templateUrl: 'dashboard/_dashboard.html',
+          controller: 'DashboardCtrl'
         })
 
       $urlRouterProvider.otherwise('home');
