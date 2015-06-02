@@ -74,6 +74,17 @@ body {
   margin-top: 7px;
 }
 
+#login-form > input {
+  background: rgb(0,95,218);
+  border: 0px;
+  color: white;
+  float: right;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-top: 21px;
+}
+
+
 #login-form > .input-group > input {
   border: 1px solid rgb(47,54,61);
   border-radius: 3px;
@@ -86,7 +97,7 @@ body {
 
 #myModalContent {
   width: 420px;
-  height: 352px;
+  height: 300px;
   margin: auto;
   margin-top: 91px;
 }
