@@ -9,11 +9,13 @@
 <section class="content">
   <div class="col-md-8 col-md-offset-2">
     <h3>Recent Footprints</h3>
-    <table class="table table-striped table-bordered table-condensed">
-      <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='-id'">Created at</a></th>
-      <th class="leaderboard-th-a">Updated at</th>
-      <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='user.username'">Created by</a></th>
-      <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='-co2_output'">CO<sub>2</sub> output</a></th>
+    <table class="table table-condensed" id="leaderboard">
+      <tr id="leaderboard-top-row">
+        <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='-id'">Created at</a></th>
+        <th class="leaderboard-th-a">Updated at</th>
+        <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='user.username'">Created by</a></th>
+        <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='-co2_output'">CO<sub>2</sub> output</a></th>
+      </tr>
       <tr ng-repeat="post in posts | orderBy:sortMethod">
         <td>{{post.formatted_created_at}}</td>
         <td>{{post.formatted_updated_at}}</td>

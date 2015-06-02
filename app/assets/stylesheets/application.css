@@ -94,6 +94,11 @@ body {
   right:0;
 }
 
+#leaderboard-top-row > th {
+  border-top: 0px;
+  border-bottom: 2px solid rgb(213,213,213);
+}
+
 #login-form {
   margin-top: 7px;
 }
