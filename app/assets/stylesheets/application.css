@@ -63,10 +63,27 @@ body {
   position: fixed;
   left:0;
   right:0;
+}
 
+#myModalContent {
+  width: 420px;
+  height: 352px;
+  margin: auto;
+  margin-top: 91px;
 }
 
 #sign-in-button {
   float: right;
   margin: 27px 20px 0 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
