@@ -40,6 +40,11 @@ body {
   height: 77px;
 }
 
+.form-control {
+  width: 100%;
+  border: 1px solid yellow;
+}
+
 .modal {
   z-index:9999;
 }
@@ -63,6 +68,20 @@ body {
   position: fixed;
   left:0;
   right:0;
+}
+
+#login-form {
+  margin-top: 7px;
+}
+
+#login-form > .input-group > input {
+  border: 1px solid rgb(47,54,61);
+  border-radius: 3px;
+  color: rgb(159,159,159);
+  font-size: 16px;
+  height: 38px;
+  margin-top: 24px;
+  width: 378px;
 }
 
 #myModalContent {
