@@ -31,7 +31,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
           }
         })
         .state('dashboard', {
-          url: 'home',
+          url: '/home',
           templateUrl: 'dashboard/_dashboard.html',
           controller: 'DashboardCtrl'
         })
