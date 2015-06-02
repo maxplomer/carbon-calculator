@@ -32,6 +32,7 @@ angular.module('carbonCalculator')
 
       $scope.login = function() {
         Auth.login($scope.user).then(function() {
+          $('#myModal').modal('hide');
           $state.go('dashboard');
         });
       };
