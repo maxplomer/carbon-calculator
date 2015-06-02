@@ -1,8 +1,10 @@
 angular.module('carbonCalculator')
   .controller('MainCtrl', [
     '$scope',
+    '$state',
+    'Auth',
     'posts',
-    function($scope, posts) {
+    function($scope, $state, Auth, posts) {
 
       $scope.posts = posts.posts;
 
@@ -26,6 +28,18 @@ angular.module('carbonCalculator')
         $scope.energy_source = '';
         $scope.lbs_of_meat_per_day = '';
         $scope.airline_miles_per_year = '';
+      };
+
+      $scope.login = function() {
+        Auth.login($scope.user).then(function() {
+          $state.go('home');
+        });
+      };
+
+      $scope.register = function() {
+        Auth.register($scope.user).then(function() {
+          $state.go('home');
+        });
       };
 
     }
