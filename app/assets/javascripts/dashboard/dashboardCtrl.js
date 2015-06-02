@@ -8,6 +8,14 @@ angular.module('carbonCalculator')
 
       $scope.logout = Auth.logout;
 
+      Auth.currentUser().then(function (user){
+        $scope.user = user;
+      });
+
+
+
+
+
       $scope.posts = posts.posts;
 
       $scope.sortMethod = '-id';
