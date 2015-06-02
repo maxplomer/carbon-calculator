@@ -45,6 +45,10 @@ body {
   border: 1px solid yellow;
 }
 
+.leaderboard-middle-row > td {
+  height: 50px;
+}
+
 .leaderboard-th-a {
   color: rgb(162,162,162);
 }

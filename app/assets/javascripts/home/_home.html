@@ -16,7 +16,7 @@
         <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='user.username'">Created by</a></th>
         <th><a class="leaderboard-th-a" href="#" ng-click="sortMethod='-co2_output'">CO<sub>2</sub> output</a></th>
       </tr>
-      <tr ng-repeat="post in posts | orderBy:sortMethod">
+      <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
         <td>{{post.formatted_created_at}}</td>
         <td>{{post.formatted_updated_at}}</td>
         <td><a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a></td>
