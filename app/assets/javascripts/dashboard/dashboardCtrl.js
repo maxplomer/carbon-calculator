@@ -8,6 +8,12 @@ angular.module('carbonCalculator')
 
       $scope.logout = Auth.logout;
 
+      $scope.logout = function() {
+        Auth.logout().then(function() {
+          $state.go('home');
+        });
+      };
+
       Auth.currentUser().then(function (user){
         $scope.user = user;
       });
@@ -51,6 +57,8 @@ angular.module('carbonCalculator')
           $state.go('home');
         });
       };
+
+
 
     }
   ]);
