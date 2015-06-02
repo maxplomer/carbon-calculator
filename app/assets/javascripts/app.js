@@ -6,7 +6,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
 
       $stateProvider
         .state('home', {
-          url: '',
+          url: '/',
           templateUrl: 'home/_home.html',
           controller: 'MainCtrl',
           resolve: {
@@ -41,7 +41,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
           }]
         })
 
-      $urlRouterProvider.otherwise('home');
+      $urlRouterProvider.otherwise('/');
       
     }
   ]);
