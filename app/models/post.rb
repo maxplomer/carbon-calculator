@@ -20,4 +20,10 @@ class Post < ActiveRecord::Base
       .in_time_zone("Eastern Time (US & Canada)")
       .strftime("%m/%d/%Y")
   end
+
+  def formatted_updated_at
+    self.updated_at
+      .in_time_zone("Eastern Time (US & Canada)")
+      .strftime("%m/%d/%Y")
+  end
 end
