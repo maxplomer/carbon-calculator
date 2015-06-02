@@ -42,25 +42,12 @@ body {
 
 /* --- ids --- */
 
-
-
-
-
-
-
-
 #carbon-logo {
   color: rgb(21,110,216); 
   font-size: 32px;
   margin: auto;
   margin-top: 20px;
   width: 400px;
-}
-
-#home-navbar {
-  background: white;
-  border-bottom: 2px solid rgb(224,224,224);
-  height: 77px;
 }
 
 #navbar-col {
