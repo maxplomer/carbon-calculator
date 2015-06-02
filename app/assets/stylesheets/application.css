@@ -60,6 +60,10 @@ body {
 
 #navbar-col {
   text-align:center;
+  position: fixed;
+  left:0;
+  right:0;
+
 }
 
 #sign-in-button {
