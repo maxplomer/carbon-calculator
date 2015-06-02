@@ -12,14 +12,15 @@
 </head>
 
 <body ng-app="carbonCalculator" ng-controller="MainCtrl">
-  <nav class="fixed-nav-bar">
-    <!-- Fixed navigation bar content -->
-  </nav>
-  <section class="content">
-    <div class="col-md-8 col-md-offset-2">
-      <ui-view></ui-view>
+  <nav id="home-navbar" class="navbar navbar-default navbar-fixed-top">
+    <div id="home-navbar-col" class="col-md-8 col-md-offset-2">
+      <div id="sign-in-button"><a href="#" class="">Sign in</a></div>
+      <h1 id="carbon-logo">Carbon Calculator</h1>
     </div>
-  </section>
+  </nav>
+  <div class="col-md-8 col-md-offset-2">
+    <ui-view></ui-view>
+  </div>
 </body>
 
 </html>

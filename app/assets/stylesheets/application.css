@@ -24,14 +24,30 @@
 /* --- elements --- */
 
 body {
-  min-height: 1000px;
   padding-top: 77px;
 }
 
 /* --- classes --- */
 
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid rgb(224,224,224);
+  height: 77px;
+}
 
 /* --- ids --- */
+
+
+
+/*
+
+
+
 
 #carbon-logo {
   color: rgb(21,110,216); 
@@ -55,3 +71,4 @@ body {
   float: right;
   margin: 27px 20px 0 20px;
 }
+*/
