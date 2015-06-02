@@ -39,6 +39,7 @@ body {
   margin: auto;
   margin-top: 20px;
   width: 400px;
+  border: 1px solid yellow;
 }
 
 #home-navbar {
@@ -50,4 +51,5 @@ body {
 #sign-in-button {
   float: right;
   margin: 27px 20px 0 20px;
+  border: 1px solid yellow;
 }
