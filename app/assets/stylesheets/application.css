@@ -21,34 +21,7 @@
   display: block;
 }
 
-#carbon-logo {
-  color: rgb(21,110,216);	
-  font-size: 32px;
-  margin: auto;
-  margin-top: 20px;
-  width: 400px;
+body {
+  min-height: 2000px;
+  padding-top: 70px;
 }
-
-#home-navbar {
-  background: white;
-  border-bottom: 2px solid rgb(224,224,224);
-  height: 77px;
-}
-
-#home-navbar-col {
-  border: 1px solid white;  
-  min-width: 450px;
-  text-align: center;
-}
-
-#sign-in-button {
-  float: right;
-  margin: 27px 20px 0 20px;
-}
-
-
-
-/*
-.glyphicon-thumbs-up {
-  cursor: pointer;
-}*/
