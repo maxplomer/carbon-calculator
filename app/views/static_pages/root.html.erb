@@ -13,7 +13,9 @@
 
 <body ng-app="carbonCalculator" ng-controller="MainCtrl">
   <nav class="fixed-nav-bar">
-    <!-- Fixed navigation bar content -->
+    <div id="navbar-col" class="col-md-8 col-md-offset-2">
+      <div ng-include="'nav/_nav.html'"></div>
+    </div>
   </nav>
   <section class="content">
     <div class="col-md-8 col-md-offset-2">
