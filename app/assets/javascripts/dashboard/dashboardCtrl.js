@@ -6,8 +6,6 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
-      $scope.logout = Auth.logout;
-
       $scope.logout = function() {
         Auth.logout().then(function() {
           $state.go('home');
