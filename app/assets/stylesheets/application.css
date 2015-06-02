@@ -33,11 +33,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 100;
   width: 100%;
   background: white;
   border-bottom: 2px solid rgb(224,224,224);
   height: 77px;
+}
+
+.modal {
+  z-index:99999;
 }
 
 /* --- ids --- */
