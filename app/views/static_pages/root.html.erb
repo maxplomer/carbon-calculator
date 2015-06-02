@@ -12,13 +12,13 @@
 </head>
 
 <body ng-app="carbonCalculator" ng-controller="MainCtrl">
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav id="home-navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="col-md-8 col-md-offset-2" style="border: 1px solid blue;">
-      HELLOWORLD
+      <div ng-include="'nav/_nav.html'"></div>
     </div>
   </nav>
   <div class="col-md-8 col-md-offset-2" style="border: 1px solid blue;">
-    HELLOWORLD
+    <ui-view></ui-view>
   </div>
 </body>
 
