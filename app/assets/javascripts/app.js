@@ -33,7 +33,12 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
         .state('dashboard', {
           url: '/home',
           templateUrl: 'dashboard/_dashboard.html',
-          controller: 'DashboardCtrl'
+          controller: 'DashboardCtrl',
+          onEnter: ['$state', 'Auth', function($state, Auth) {
+            Auth.currentUser().then(function (){
+              console.log('logged in')
+            })
+          }]
         })
 
       $urlRouterProvider.otherwise('home');
