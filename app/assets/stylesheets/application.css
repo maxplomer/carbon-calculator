@@ -45,8 +45,12 @@ body {
   border: 1px solid yellow;
 }
 
+.leaderboard-middle-row {
+  height: 46px;
+}
+
 .leaderboard-middle-row > td {
-  height: 50px;
+  padding-top: 12px !important;
 }
 
 .leaderboard-th-a {
