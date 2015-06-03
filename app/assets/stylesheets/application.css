@@ -55,6 +55,7 @@ body {
 
 .leaderboard-th-a {
   color: rgb(162,162,162);
+  font-weight: lighter;
 }
 
 .leaderboard-th-a:link {
@@ -96,10 +97,14 @@ body {
 }
 
 #navbar-col {
-  text-align:center;
-  position: fixed;
   left:0;
+  position: fixed;
   right:0;
+  text-align:center;
+}
+
+#leaderboard-table {
+  border-bottom: 1px solid rgb(213,213,213);
 }
 
 #leaderboard-top-row > th {
