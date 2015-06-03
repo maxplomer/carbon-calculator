@@ -8,7 +8,7 @@ angular.module('carbonCalculator')
 
       $scope.posts = posts.posts;
 
-      $scope.sortMethod = '-id';
+      $scope.sortMethod = '-co2_output';
 
       $scope.addPost = function(){
         posts.create({
