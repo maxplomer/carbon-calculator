@@ -26,4 +26,8 @@ class Post < ActiveRecord::Base
       .in_time_zone("Eastern Time (US & Canada)")
       .strftime("%m/%d/%Y")
   end
+
+  def updated_at_id
+    self.updated_at.to_i
+  end
 end
