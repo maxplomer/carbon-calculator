@@ -9,13 +9,40 @@ angular.module('carbonCalculator')
       $scope.posts = posts.posts;
 
       $scope.sortMethod = '-co2_output';
+      $scope.sortMethodId = false;
+      $scope.sortMethodUpdatedAt = false;
+      $scope.sortMethodUsername = false;
+      $scope.sortMethodCo2Output = true;
+
+      var sortMethods = {
+        '-id': 'Id', 
+        '-updated_at_id': 'UpdatedAt', 
+        'user.username': 'Username', 
+        '-co2_output': 'Co2Output'
+      }
 
       $scope.changeSortMethod = function(method) { 
+        $scope.setBoldVariables(method);
         if ($scope.sortMethod == method) {
           $scope.sortMethod = "-" + method;
         } else {
           $scope.sortMethod = method;
         }
+      };
+
+      $scope.setBoldVariables = function(method) {
+
+        $scope.sortMethodId = false;
+        $scope.sortMethodUpdatedAt = false;
+        $scope.sortMethodUsername = false;
+        $scope.sortMethodCo2Output = false;
+
+        var cmd = '$scope.sortMethod' + 'Id' + ' = true;'
+        
+        console.log(sortMethods['method'])
+        console.log(method)
+        console.log(sortMethods)
+        eval(cmd);
       };
 
       $scope.addPost = function(){

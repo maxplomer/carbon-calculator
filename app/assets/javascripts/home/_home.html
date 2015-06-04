@@ -11,10 +11,10 @@
     <h3>Recent Footprints</h3>
     <table class="table table-condensed" id="leaderboard-table">
       <tr id="leaderboard-top-row">
-        <th><a class="leaderboard-th-a" href="#" ng-click="changeSortMethod('-id')">Created at</a></th>
-        <th><a class="leaderboard-th-a" href="#" ng-click="changeSortMethod('-updated_at_id')">Updated at</a></th>
-        <th><a class="leaderboard-th-a" href="#" ng-click="changeSortMethod('user.username')">Created by</a></th>
-        <th><a class="leaderboard-th-a" href="#" ng-click="changeSortMethod('-co2_output')">CO<sub>2</sub> output</a></th>
+        <th><a class="leaderboard-th-a sorting-{{ sortMethodId }}" href="#" ng-click="changeSortMethod('-id')">Created at</a></th>
+        <th><a class="leaderboard-th-a sorting-{{ sortMethodUpdatedAt }}" href="#" ng-click="changeSortMethod('-updated_at_id')">Updated at</a></th>
+        <th><a class="leaderboard-th-a sorting-{{ sortMethodUsername }}" href="#" ng-click="changeSortMethod('user.username')">Created by</a></th>
+        <th><a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">CO<sub>2</sub> output</a></th>
       </tr>
       <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
         <td>{{post.formatted_created_at}}</td>

@@ -86,6 +86,10 @@ body {
   font-weight: normal;
 }
 
+.sorting-true {
+  font-weight: bold;
+}
+
 /* --- ids --- */
 
 #carbon-logo {
