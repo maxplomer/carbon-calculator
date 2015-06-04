@@ -88,6 +88,11 @@ body {
 
 .sorting-true {
   font-weight: bold;
+  letter-spacing: '';
+}
+
+.sorting-false {
+  letter-spacing: 0.4px;
 }
 
 /* --- ids --- */
