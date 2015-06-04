@@ -27,6 +27,12 @@ body {
   padding-top: 77px;
 }
 
+h3 {
+  color: rgb(85,85,85) !important;
+  font-weight: normal !important;
+  padding: 20px;
+}
+
 /* --- classes --- */
 
 .fixed-nav-bar {
