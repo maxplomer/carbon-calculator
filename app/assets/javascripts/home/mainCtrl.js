@@ -24,7 +24,7 @@ angular.module('carbonCalculator')
       
 
       $scope.changeSortMethod = function(method) { 
-        $scope.setBoldVariables(method);
+        setBoldVariables(method);
         if ($scope.sortMethod == method) {
           $scope.sortMethod = "-" + method;
         } else {
@@ -32,7 +32,7 @@ angular.module('carbonCalculator')
         }
       };
 
-      $scope.setBoldVariables = function(method) {
+      var setBoldVariables = function(method) {
         $scope.sortMethodId = false;
         $scope.sortMethodUpdatedAt = false;
         $scope.sortMethodUsername = false;
