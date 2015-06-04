@@ -21,6 +21,8 @@ angular.module('carbonCalculator')
         '-co2_output': 'Co2Output'
       }
 
+      
+
       $scope.changeSortMethod = function(method) { 
         $scope.setBoldVariables(method);
         if ($scope.sortMethod == method) {
@@ -31,17 +33,13 @@ angular.module('carbonCalculator')
       };
 
       $scope.setBoldVariables = function(method) {
-
         $scope.sortMethodId = false;
         $scope.sortMethodUpdatedAt = false;
         $scope.sortMethodUsername = false;
         $scope.sortMethodCo2Output = false;
 
-        var cmd = '$scope.sortMethod' + 'Id' + ' = true;'
+        var cmd = '$scope.sortMethod' + sortMethods[method] + ' = true;'
         
-        console.log(sortMethods['method'])
-        console.log(method)
-        console.log(sortMethods)
         eval(cmd);
       };
 
