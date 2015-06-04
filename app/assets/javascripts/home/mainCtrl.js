@@ -14,14 +14,22 @@ angular.module('carbonCalculator')
       $scope.sortMethodUsername = false;
       $scope.sortMethodCo2Output = true;
 
+      //variables for the ascending and decending arrows
+      $scope.sortMethodId_ASC = false;
+      $scope.sortMethodUpdatedAt_ASC = false;
+      $scope.sortMethodUsername_ASC = false;
+      $scope.sortMethodCo2Output_ASC = false;
+      $scope.sortMethodId_DESC = false;
+      $scope.sortMethodUpdatedAt_DESC = false;
+      $scope.sortMethodUsername_DESC = false;
+      $scope.sortMethodCo2Output_DESC = true;
+
       var sortMethods = {
         '-id': 'Id', 
         '-updated_at_id': 'UpdatedAt', 
         'user.username': 'Username', 
         '-co2_output': 'Co2Output'
       }
-
-      
 
       $scope.changeSortMethod = function(method) { 
         setBoldVariables(method);

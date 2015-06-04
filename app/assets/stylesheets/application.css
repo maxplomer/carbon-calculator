@@ -95,6 +95,14 @@ body {
   letter-spacing: 0.4px;
 }
 
+.sorting-arrow-true {
+  display: '';
+}
+
+.sorting-arrow-false {
+  display: none !important;
+}
+
 /* --- ids --- */
 
 #carbon-logo {
