@@ -10,6 +10,14 @@ angular.module('carbonCalculator')
 
       $scope.sortMethod = '-co2_output';
 
+      $scope.changeSortMethod = function(method) { 
+        if ($scope.sortMethod == method) {
+          $scope.sortMethod = "-" + method;
+        } else {
+          $scope.sortMethod = method;
+        }
+      };
+
       $scope.addPost = function(){
         posts.create({
           gal_of_gas_per_day: $scope.gal_of_gas_per_day,
@@ -29,6 +37,8 @@ angular.module('carbonCalculator')
         $scope.lbs_of_meat_per_day = '';
         $scope.airline_miles_per_year = '';
       };
+
+      //Auth
 
       $scope.login = function() {
         Auth.login($scope.user).then(function() {
