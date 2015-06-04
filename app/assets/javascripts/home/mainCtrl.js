@@ -8,6 +8,13 @@ angular.module('carbonCalculator')
 
       $scope.posts = posts.posts;
 
+      var sortMethods = {
+        '-id': 'Id', 
+        '-updated_at_id': 'UpdatedAt', 
+        'user.username': 'Username', 
+        '-co2_output': 'Co2Output'
+      }
+
       $scope.sortMethod = '-co2_output';
       $scope.sortMethodId = false;
       $scope.sortMethodUpdatedAt = false;
@@ -24,19 +31,14 @@ angular.module('carbonCalculator')
       $scope.sortMethodUsername_DESC = false;
       $scope.sortMethodCo2Output_DESC = true;
 
-      var sortMethods = {
-        '-id': 'Id', 
-        '-updated_at_id': 'UpdatedAt', 
-        'user.username': 'Username', 
-        '-co2_output': 'Co2Output'
-      }
-
       $scope.changeSortMethod = function(method) { 
         setBoldVariables(method);
         if ($scope.sortMethod == method) {
           $scope.sortMethod = "-" + method;
+          setSortArrow(method, 'ASC');
         } else {
           $scope.sortMethod = method;
+          setSortArrow(method, 'DESC');
         }
       };
 
@@ -46,8 +48,24 @@ angular.module('carbonCalculator')
         $scope.sortMethodUsername = false;
         $scope.sortMethodCo2Output = false;
 
-        var cmd = '$scope.sortMethod' + sortMethods[method] + ' = true;'
+        var cmd = '$scope.sortMethod' + sortMethods[method] + ' = true;';
         
+        eval(cmd);
+      };
+
+      var setSortArrow = function(method, direction) {
+        //use method to clean this up
+        $scope.sortMethodId_ASC = false;
+        $scope.sortMethodUpdatedAt_ASC = false;
+        $scope.sortMethodUsername_ASC = false;
+        $scope.sortMethodCo2Output_ASC = false;
+        $scope.sortMethodId_DESC = false;
+        $scope.sortMethodUpdatedAt_DESC = false;
+        $scope.sortMethodUsername_DESC = false;
+        $scope.sortMethodCo2Output_DESC = false;
+
+        var cmd = '$scope.sortMethod' + sortMethods[method] + '_' + direction + ' = true;';
+
         eval(cmd);
       };
 
