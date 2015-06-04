@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
 
   def index
-    render json: Post.all.sort_by(&:id).reverse
+    render json: Post.all.sort_by(&:id)
   end
 
   def create
