@@ -15,9 +15,9 @@ angular.module('carbonCalculator')
         '-co2_output': 'Co2Output'
       }
 
-      $scope.changeSortMethod = function(method) { 
+      $scope.changeSortMethod = function(method, flag) { 
         setBoldVariables(method);
-        if ($scope.sortMethod == method) {
+        if ($scope.sortMethod == method && !flag) {
           $scope.sortMethod = "-" + method;
           setSortArrow(method, 'ASC');
         } else {
@@ -53,7 +53,7 @@ angular.module('carbonCalculator')
       };
 
       //call changeSortMethod() here to set the sort variables
-      $scope.changeSortMethod('-co2_output');
+      $scope.changeSortMethod('-co2_output', true); //flag=true will force descending
 
 
       $scope.addPost = function(){
