@@ -23,7 +23,7 @@
     </ul>
   </div>
   <div class="col-md-8">
-    <button type="button" class="btn btn-default new-footprint" data-toggle="tooltip" data-placement="left" title="New footprint"><i class="fa fa-plus-square-o"></i></button>
+    <a class="new-footprint" data-toggle="tooltip" data-placement="left" title="New footprint" ng-click="newFootprint();"><i class="fa fa-plus-square-o"></i></a>
     <script>
       $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -129,7 +129,7 @@
     <div id="myModalContent" class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+        <h4 class="modal-title" id="myModalLabel">Add a New Footprint</h4>
       </div>
       <div class="modal-body">
         <form ng-submit="login()" id="login-form">

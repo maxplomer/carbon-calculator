@@ -8,6 +8,10 @@ angular.module('carbonCalculator')
 
       $scope.posts = posts.posts;
 
+      $scope.newFootprint = function() {
+        $('#myModal').modal('toggle');
+      };
+
       $scope.addPost = function(){
         posts.create({
           gal_of_gas_per_day: $scope.gal_of_gas_per_day,
