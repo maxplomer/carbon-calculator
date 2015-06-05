@@ -1,76 +1,71 @@
 <div class="row" style="left: 15px; position: relative;">
   <div class="col-md-2 col-md-offset-9" style="height:57px;padding-top:15px">
-
-	<div class="dropdown" style="float:right">
-	  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-	    {{ user.username }}
-	    <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="left:-70px">
-	  	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Account</a></li>
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="logout()">Log Out</a></li>
-	  </ul>
-	</div>
-
-  	<a href="#" style="float:right;display:none;">{{ user.username }} <i class="fa fa-sort-desc"></i></a>
+    <div class="dropdown" style="float:right">
+      <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+      {{ user.username }}
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="left:-70px">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Account</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="logout()">Log Out</a></li>
+      </ul>
+    </div>
+    <a href="#" style="float:right;display:none;">{{ user.username }} <i class="fa fa-sort-desc"></i></a>
   </div>
 </div>
-
 <section class="row" style="left: 15px; position: relative;">
   <div class="col-md-2 col-md-offset-1" style="">
-  	<ul class="dashboard-nav-ul">
-  	  <li><img src="/carbonlogo.png" style="margin-bottom:30px"><li>
-  	  <li style="padding-bottom:10px"><a href="#/home"><i class="fa fa-tree"></i>&nbsp; Footprints</a></li>
-  	  <li style="padding-bottom:50px"><a href="#/progress"><i class="fa fa-area-chart"></i> Progress</a></li>
-  	</ul>
+    <ul class="dashboard-nav-ul">
+      <li><img src="/carbonlogo.png" style="margin-bottom:30px">
+      <li>
+      <li style="padding-bottom:10px"><a href="#/home"><i class="fa fa-tree"></i>&nbsp; Footprints</a></li>
+      <li style="padding-bottom:50px"><a href="#/progress"><i class="fa fa-area-chart"></i> Progress</a></li>
+    </ul>
   </div>
-
   <div class="col-md-8">
-  	<button type="button" class="btn btn-default new-footprint" data-toggle="tooltip" data-placement="left" title="New footprint"><i class="fa fa-plus-square-o"></i></button>
-	<script>
-		$(function () {
-		  $('[data-toggle="tooltip"]').tooltip()
-		})
-	</script>
-  	<h4 class="dashboard-h4">My Footprints</h4>
+    <button type="button" class="btn btn-default new-footprint" data-toggle="tooltip" data-placement="left" title="New footprint"><i class="fa fa-plus-square-o"></i></button>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <h4 class="dashboard-h4">My Footprints</h4>
     <table class="table table-condensed" id="leaderboard-table">
-        <tr id="leaderboard-top-row">
-          <th class="col-md-3">
-            <a class="leaderboard-th-a sorting-{{ sortMethodId }}" href="#" ng-click="changeSortMethod('-id')">
-            Created at 
-            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodId_ASC }}"></i>
-            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodId_DESC }}"></i>
-            </a>
-          </th>
-          <th class="col-md-3">
-            <a class="leaderboard-th-a sorting-{{ sortMethodUpdatedAt }}" href="#" ng-click="changeSortMethod('-updated_at_id')">
-            Updated at 
-            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUpdatedAt_ASC }}"></i>
-            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUpdatedAt_DESC }}"></i>
-            </a>
-          </th>
-          <th class="col-md-3">
-            <a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">
-            CO<sub>2</sub> output 
-            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodCo2Output_ASC }}"></i>
-            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodCo2Output_DESC }}"></i>
-            </a>
-          </th>
-        </tr>
-        <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
-          <td>{{post.formatted_created_at}}</td>
-          <td>{{post.formatted_updated_at}}</td>
-          <td>
-            {{post.co2_output}} &nbsp;
-            <a href="#/posts/{{post.id}}"><i class="fa fa-external-link-square"></i></a>
-          </td>
-        </tr>
-      </table>
+      <tr id="leaderboard-top-row">
+        <th class="col-md-3">
+          <a class="leaderboard-th-a sorting-{{ sortMethodId }}" href="#" ng-click="changeSortMethod('-id')">
+          Created at 
+          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodId_ASC }}"></i>
+          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodId_DESC }}"></i>
+          </a>
+        </th>
+        <th class="col-md-3">
+          <a class="leaderboard-th-a sorting-{{ sortMethodUpdatedAt }}" href="#" ng-click="changeSortMethod('-updated_at_id')">
+          Updated at 
+          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUpdatedAt_ASC }}"></i>
+          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUpdatedAt_DESC }}"></i>
+          </a>
+        </th>
+        <th class="col-md-3">
+          <a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">
+          CO<sub>2</sub> output 
+          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodCo2Output_ASC }}"></i>
+          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodCo2Output_DESC }}"></i>
+          </a>
+        </th>
+      </tr>
+      <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
+        <td>{{post.formatted_created_at}}</td>
+        <td>{{post.formatted_updated_at}}</td>
+        <td>
+          {{post.co2_output}} &nbsp;
+          <a href="#/posts/{{post.id}}"><i class="fa fa-external-link-square"></i></a>
+        </td>
+      </tr>
+    </table>
   </div>
 </section>
-
 <br><br>
-
 <form ng-submit="addPost()" style="margin-top:30px;">
   <h3>Add a New Footprint</h3>
   <div class="form-group">
@@ -128,3 +123,25 @@
   </div>
   <button type="submit" class="btn btn-primary">Post</button>
 </form>
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div id="myModalContent" class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="login()" id="login-form">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+          </div>
+          <div class="input-group">
+            <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+          </div>
+          <input type="submit" class="btn btn-default" value="Sign in">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
