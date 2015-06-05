@@ -1,6 +1,17 @@
 <div class="row" style="left: 15px; position: relative;">
   <div class="col-md-2 col-md-offset-9" style="height:57px;padding-top:15px">
-  	<a href="#" style="float:right">{{ user.username }} <i class="fa fa-sort-desc"></i></a>
+
+	<div class="dropdown">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+	    {{ user.username }}
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="logout()">Log Out</a></li>
+	  </ul>
+	</div>
+
+  	<a href="#" style="float:right;display:none;">{{ user.username }} <i class="fa fa-sort-desc"></i></a>
   </div>
 </div>
 
@@ -50,8 +61,6 @@
       </table>
   </div>
 </section>
-
-<a ng-click="logout()">Log Out</a>
 
 <br><br>
 
