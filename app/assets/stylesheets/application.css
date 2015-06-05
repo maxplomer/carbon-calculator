@@ -222,7 +222,8 @@ h3 {
 
 
 
-/* --- class and ids to make footer work --- */
+/* --- classes and ids for footer --- */
+
 #footer {
   background: rgb(241,241,241);
   width:100%;
