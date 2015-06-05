@@ -33,7 +33,6 @@ html {
 body {
   font-family: OpenSans !important;
   height: 100%;
-  padding-top: 77px;
 }
 
 h1, h4 {
@@ -53,6 +52,7 @@ h3 {
 
 .content {
   background: rgb(251,251,251);
+  padding-top: 77px;
 }
 
 .fixed-nav-bar {
@@ -245,6 +245,13 @@ h3 {
   min-height:100%;
   position:relative;
 }
+
+
+/* --- classes and ids for dashboard --- */
+
+
+
+
 
 
 
