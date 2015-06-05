@@ -69,14 +69,13 @@
 
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div id="myModalContent" class="modal-content">
+    <div id="myModalContent2" class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add a New Footprint</h4>
       </div>
       <div class="modal-body">
-        <form ng-submit="addPost()" style="margin-top:30px;">
-          <h3>Add a New Footprint</h3>
+        <form ng-submit="addPost()">
           <div class="form-group">
             <label>Gallons of Gasoline per Day</label>
             <input type="number" step="0.1" class="form-control" placeholder="Gallons of Gasoline per Day" ng-model="gal_of_gas_per_day" required></input>
