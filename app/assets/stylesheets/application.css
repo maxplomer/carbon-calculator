@@ -63,6 +63,10 @@ h3 {
   border: 1px solid yellow;
 }
 
+.input-group {
+  width: 100%; 
+}
+
 .leaderboard-middle-row {
   height: 46px;
 }
@@ -170,21 +174,8 @@ h3 {
   margin-top: 24px;
 }
 
-.input-group {
-  width: 100%; 
-}
-
-#register-form {
-  max-width: 400px;
-  margin-left: 20px;
-  padding-right: 20px;
-}
-
 #login-form > .input-group > input { 
-  width: 378px; }
-
-#register-form > .input-group > input { 
-  width: 100% !important;
+  width: 378px; 
 }
 
 #myModalContent {
@@ -192,6 +183,16 @@ h3 {
   height: 300px;
   margin: auto;
   margin-top: 91px;
+}
+
+#register-form {
+  margin-left: 20px;
+  max-width: 400px;
+  padding-right: 20px;
+}
+
+#register-form > .input-group > input { 
+  width: 100% !important;
 }
 
 #sign-in-button {
