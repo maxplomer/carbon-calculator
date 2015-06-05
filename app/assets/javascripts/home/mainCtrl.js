@@ -66,7 +66,7 @@ angular.module('carbonCalculator')
 
       $scope.register = function() {
         Auth.register($scope.user).then(function() {
-          $state.go('home');
+          $state.go('dashboard');
         });
       };
 
