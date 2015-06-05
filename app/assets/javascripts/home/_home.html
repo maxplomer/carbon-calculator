@@ -4,75 +4,79 @@
     <h1 id="carbon-logo">Carbon Calculator</h1>
   </div>
 </nav>
-
-<section class="content">
-  <div class="col-md-8 col-md-offset-2">
-    <h3>Recent Footprints</h3>
-    <table class="table table-condensed" id="leaderboard-table">
-      <tr id="leaderboard-top-row">
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodId }}" href="#" ng-click="changeSortMethod('-id')">
-          Created at 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodId_ASC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodId_DESC }}"></i>
-          </a>
-        </th>
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodUpdatedAt }}" href="#" ng-click="changeSortMethod('-updated_at_id')">
-          Updated at 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUpdatedAt_ASC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUpdatedAt_DESC }}"></i>
-          </a>
-        </th>
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodUsername }}" href="#" ng-click="changeSortMethod('user.username')">
-          Created by 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUsername_DESC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUsername_ASC }}"></i>
-          </a>
-        </th>
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">
-          CO<sub>2</sub> output 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodCo2Output_ASC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodCo2Output_DESC }}"></i>
-          </a>
-        </th>
-      </tr>
-      <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
-        <td>{{post.formatted_created_at}}</td>
-        <td>{{post.formatted_updated_at}}</td>
-        <td><a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a></td>
-        <td>
-          {{post.co2_output}} &nbsp;
-          <a href="#/posts/{{post.id}}"><i class="fa fa-external-link-square"></i></a>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-2 home-left-text">
-      <h1>Calculate your carbon footprint</h1>
-      <h4>Track your progress as you create a more sustainable lifestyle.</h4>
+<div id="wrapper">
+  <section class="content">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Recent Footprints</h3>
+      <table class="table table-condensed" id="leaderboard-table">
+        <tr id="leaderboard-top-row">
+          <th class="col-md-3">
+            <a class="leaderboard-th-a sorting-{{ sortMethodId }}" href="#" ng-click="changeSortMethod('-id')">
+            Created at 
+            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodId_ASC }}"></i>
+            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodId_DESC }}"></i>
+            </a>
+          </th>
+          <th class="col-md-3">
+            <a class="leaderboard-th-a sorting-{{ sortMethodUpdatedAt }}" href="#" ng-click="changeSortMethod('-updated_at_id')">
+            Updated at 
+            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUpdatedAt_ASC }}"></i>
+            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUpdatedAt_DESC }}"></i>
+            </a>
+          </th>
+          <th class="col-md-3">
+            <a class="leaderboard-th-a sorting-{{ sortMethodUsername }}" href="#" ng-click="changeSortMethod('user.username')">
+            Created by 
+            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUsername_DESC }}"></i>
+            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUsername_ASC }}"></i>
+            </a>
+          </th>
+          <th class="col-md-3">
+            <a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">
+            CO<sub>2</sub> output 
+            <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodCo2Output_ASC }}"></i>
+            <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodCo2Output_DESC }}"></i>
+            </a>
+          </th>
+        </tr>
+        <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
+          <td>{{post.formatted_created_at}}</td>
+          <td>{{post.formatted_updated_at}}</td>
+          <td><a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a></td>
+          <td>
+            {{post.co2_output}} &nbsp;
+            <a href="#/posts/{{post.id}}"><i class="fa fa-external-link-square"></i></a>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-3">
-      <form ng-submit="register()" id="register-form">
-        <div class="input-group">
-          <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
-        </div>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Username" ng-model="user.username">
-        </div>
-        <div class="input-group">
-          <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
-        </div>
-        <input type="submit" class="btn btn-default" value="Sign up">
-      </form>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 home-left-text">
+        <h1>Calculate your carbon footprint</h1>
+        <h4>Track your progress as you create a more sustainable lifestyle.</h4>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
+        <form ng-submit="register()" id="register-form">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+          </div>
+          <div class="input-group">
+            <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+          </div>
+          <input type="submit" class="btn btn-default" value="Sign up">
+        </form>
+      </div>
     </div>
-  </div>
-</section>
-<div id="footer"></div>
+    <div class="row">
+      <div class="col" style="height:100px"></div>
+    </div>
+  </section>
+  <div id="footer"></div>
+</div>
 
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
