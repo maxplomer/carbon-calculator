@@ -30,6 +30,7 @@ angular.module('carbonCalculator')
         $scope.energy_source = '';
         $scope.lbs_of_meat_per_day = '';
         $scope.airline_miles_per_year = '';
+        $('#myModal').modal('toggle');
       };
 
       //Auth
