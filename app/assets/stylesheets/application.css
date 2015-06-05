@@ -273,10 +273,15 @@ ul {
   text-decoration: none
 }
 
-.fa-plus-square-o {
+.new-footprint {
+  border: 0px !important;
   font-size: 18px !important;
   float: right;
   margin: 15px 15px 0 0;
+}
+
+.new-footprint:hover {
+  background: white !important;
 }
 
 /* --- media queries --- */

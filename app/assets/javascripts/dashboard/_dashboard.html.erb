@@ -26,7 +26,12 @@
   </div>
 
   <div class="col-md-8">
-  	<i class="fa fa-plus-square-o"></i>
+  	<button type="button" class="btn btn-default new-footprint" data-toggle="tooltip" data-placement="left" title="New footprint"><i class="fa fa-plus-square-o"></i></button>
+	<script>
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
+	</script>
   	<h4 class="dashboard-h4">My Footprints</h4>
     <table class="table table-condensed" id="leaderboard-table">
         <tr id="leaderboard-top-row">
