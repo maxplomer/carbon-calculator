@@ -26,9 +26,15 @@
 
 /* --- elements --- */
 
+html {
+  height: 100%;
+}
+
 body {
-  padding-top: 77px;
   font-family: OpenSans !important;
+  height: 100%;
+  padding-top: 77px;
+  border: 1px solid blue;
 }
 
 h1, h4 {
