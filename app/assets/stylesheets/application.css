@@ -54,6 +54,10 @@ h3 {
   padding: 20px;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* --- classes --- */
 
 .content {
@@ -258,6 +262,7 @@ h3 {
 
 .dashboard-h4 {
   padding-left: 4px;
+  margin-bottom: 50px;
 }
 
 
