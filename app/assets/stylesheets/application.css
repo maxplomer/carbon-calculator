@@ -24,6 +24,13 @@
   display: block;
 }
 
+/* --- Fix for bootstrap column overhang --- */
+
+.row, div, section {
+  max-width: 100%;
+  right: 0;
+}
+
 /* --- elements --- */
 
 html {
