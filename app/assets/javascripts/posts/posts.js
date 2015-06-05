@@ -3,6 +3,12 @@ angular.module('carbonCalculator')
 
     var o = {posts: []};
 
+    o.getMyPosts = function() {
+      return $http.get('/my_posts').success(function(data){
+        angular.copy(data.posts, o.posts);
+      });
+    };
+
     o.getAll = function() {
       return $http.get('/posts').success(function(data){
         angular.copy(data.posts, o.posts);

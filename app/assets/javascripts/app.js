@@ -34,6 +34,11 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
           url: '/home',
           templateUrl: 'dashboard/_dashboard.html',
           controller: 'DashboardCtrl',
+          resolve: {
+            postPromise: ['posts', function(posts){
+              return posts.getMyPosts();
+            }]
+          },
           onEnter: ['$state', 'Auth', function($state, Auth) {
             Auth.currentUser().then(function (){
               console.log('logged in')
