@@ -151,7 +151,7 @@ h3 {
   margin-top: 7px;
 }
 
-#login-form > input {
+#login-form > input, #register-form > input {
   background: rgb(0,95,218);
   border: 0px;
   color: white;
@@ -161,14 +161,30 @@ h3 {
   margin-top: 21px;
 }
 
-#login-form > .input-group > input {
+#login-form > .input-group > input, #register-form > .input-group > input {
   border: 1px solid rgb(47,54,61);
   border-radius: 3px;
   color: rgb(159,159,159);
   font-size: 16px;
   height: 38px;
   margin-top: 24px;
-  width: 378px;
+}
+
+.input-group {
+  width: 100%; 
+}
+
+#register-form {
+  max-width: 400px;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+
+#login-form > .input-group > input { 
+  width: 378px; }
+
+#register-form > .input-group > input { 
+  width: 100% !important;
 }
 
 #myModalContent {
