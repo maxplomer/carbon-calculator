@@ -265,6 +265,9 @@ ul {
   margin-bottom: 50px;
 }
 
+.dashboard-nav-ul > li > a  {
+  text-decoration: none
+}
 
 
 /* --- media queries --- */
