@@ -36,6 +36,10 @@ html {
   height: 100%;
 }
 
+button:focus {
+  outline: 0 !important;
+}
+
 body {
   font-family: OpenSans !important;
   height: 100%;
