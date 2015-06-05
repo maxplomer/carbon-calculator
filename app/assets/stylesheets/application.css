@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+@font-face { font-family: OpenSans; src: url('/fonts/OpenSans-Regular.ttf'); } 
+@font-face { font-family: OpenSans; font-weight: bold; src: url('/fonts/OpenSans-Bold.ttf'); } 
 
 /* --- CLEARFIX --- */
 
@@ -25,6 +27,7 @@
 
 body {
   padding-top: 77px;
+  font-family: OpenSans !important;
 }
 
 h3 {
