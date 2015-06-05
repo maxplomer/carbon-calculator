@@ -42,7 +42,6 @@ h1, h4 {
   font-weight: lighter !important;
   letter-spacing: 1px;
   padding-left: 20px;
-  line-height: 150% !important;
 }
 
 h3 {
@@ -67,6 +66,10 @@ h3 {
 .form-control {
   width: 100%;
   border: 1px solid yellow;
+}
+
+.home-left-text > h1, .home-left-text > h4 {
+  line-height: 150% !important;
 }
 
 .input-group {
