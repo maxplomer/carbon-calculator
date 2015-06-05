@@ -5,7 +5,7 @@ angular.module('carbonCalculator')
 
     o.getMyPosts = function() {
       return $http.get('/my_posts').success(function(data){
-        angular.copy(data.posts, o.posts);
+        angular.copy(data.my_posts, o.posts);
       });
     };
 
