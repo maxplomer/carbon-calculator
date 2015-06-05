@@ -166,7 +166,6 @@ h3 {
 }
 
 #login-form > .input-group > input, #register-form > .input-group > input {
-  border: 1px solid rgb(47,54,61);
   border-radius: 3px;
   color: rgb(159,159,159);
   font-size: 16px;
@@ -175,6 +174,7 @@ h3 {
 }
 
 #login-form > .input-group > input { 
+  border: 1px solid rgb(47,54,61);
   width: 378px; 
 }
 
@@ -192,6 +192,7 @@ h3 {
 }
 
 #register-form > .input-group > input { 
+  border: 1px solid rgb(215,215,215);
   width: 100% !important;
 }
 
