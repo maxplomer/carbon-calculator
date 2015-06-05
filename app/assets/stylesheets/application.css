@@ -151,6 +151,7 @@ h3 {
   margin: auto;
   margin-top: 20px;
   width: 400px;
+  white-space: nowrap
 }
 
 #navbar-col {
@@ -257,6 +258,12 @@ h3 {
 
 
 
+
+/* --- media queries --- */
+
+@media(max-width:767px) {
+  
+}
 
 
 
