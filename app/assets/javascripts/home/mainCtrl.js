@@ -70,5 +70,11 @@ angular.module('carbonCalculator')
         });
       };
 
+      $scope.signInAsDemoAccount = function() {
+        Auth.login({email: "1234@1234.com", password: "12341234"}).then(function() {
+          $state.go('dashboard');
+        });
+      };
+
     }
   ]);
