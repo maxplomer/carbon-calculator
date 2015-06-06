@@ -45,6 +45,21 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise'])
             })
           }]
         })
+        .state('progress', {
+          url: '/progress',
+          templateUrl: 'dashboard/_progress.html',
+          controller: 'ProgressCtrl',
+          resolve: {
+            postPromise: ['posts', function(posts){
+              return posts.getMyPosts();
+            }]
+          },
+          onEnter: ['$state', 'Auth', function($state, Auth) {
+            Auth.currentUser().then(function (){
+              console.log('logged in')
+            })
+          }]
+        })
 
       $urlRouterProvider.otherwise('/');
       
