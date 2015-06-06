@@ -1,4 +1,4 @@
-angular.module('carbonCalculator', ["chart.js"])
+angular.module('carbonCalculator')
   .controller('ProgressCtrl', [
     '$scope',
     '$state',
