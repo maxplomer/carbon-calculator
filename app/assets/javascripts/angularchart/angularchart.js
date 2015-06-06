@@ -1,1 +1,0 @@
-angular.module('carbonCalculator', ['chart.js']);
