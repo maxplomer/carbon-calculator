@@ -67,32 +67,36 @@
   </div>
 </section>
 
+<form ng-submit="addPost()">
   On an average day I am using:<br><br>
   <input type="number" step="0.1" class="form-control" style="width:70px;display:inline-block;"> </input>
   &nbsp;
 
-  <select name="carbon_source">
-    <option value="gallons of gasoline">gallons of gasoline</option>
-    <option value="gallons of gasoline">kWh of electricity</option>
+  <select class="selectpicker" name="carbon_source">
+    <optgroup label="Home">
+      <option>kilowatt-hours of Electricity</option>
+      <option>gallons of Heating Oil</option>
+      <option>gallons of Propane</option>
+      <option>therms of Natural Gas</option>
+      <option>therms of LP Gas</option>
+      <option>metric tons of Wood</option>
+      <option>metric tons of Coal</option>
+    </optgroup>
+    <optgroup label="Food">
+      <option>pounds of Meat</option>
+    </optgroup>
+    <optgroup label="Transportation">
+      <option>gallons of Gasoline</option>
+    </optgroup>
   </select>
   &nbsp;
 
-  <button class="btn btn-default">Add</button>
+  <button type="submit" class="btn btn-default">Add</button>
+</form>
 
   <br><br>
 
-  <select class="selectpicker">
-    <optgroup label="Picnic">
-      <option>Mustard</option>
-      <option>Ketchup</option>
-      <option>Relish</option>
-    </optgroup>
-    <optgroup label="Camping">
-      <option>Tent</option>
-      <option>Flashlight</option>
-      <option>Toilet Paper</option>
-    </optgroup>
-  </select>
+
 
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
