@@ -12,6 +12,14 @@ angular.module('carbonCalculator')
         $('#myModal').modal('toggle');
       };
 
+      $scope.footprint = { "carbon_source": [] };
+
+      $scope.addFootprintItem = function() {
+        $scope.footprint["carbon_source"].push(
+          "helloworld"
+        )
+      };
+
       $scope.addPost = function(){
         posts.create({
           gal_of_gas_per_day: $scope.gal_of_gas_per_day,
