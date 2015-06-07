@@ -12,11 +12,14 @@ angular.module('carbonCalculator')
         $('#myModal').modal('toggle');
       };
 
-      $scope.footprint = { "carbon_source": [] };
+      $scope.footprint = { "carbon_sources": [] };
 
       $scope.addFootprintItem = function() {
-        $scope.footprint["carbon_source"].push(
-          "helloworld"
+        $scope.footprint["carbon_sources"].push(
+          {
+            number: $scope.footprint_item_number,
+            name: "helloworld"
+          }
         )
       };
 
