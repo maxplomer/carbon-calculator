@@ -70,22 +70,22 @@
 <form ng-submit="addFootprintItem()">
   On an average day I am using:<br>
   <ul style="list-style-type: circle;margin-top:5px">
-    <li ng-repeat="carbon_source in footprint['carbon_sources'] | orderBy:'name'"> 
-      {{ carbon_source.number }} 
-      {{ carbon_source.name }}
+    <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'"> 
+      {{ carbon_source.name }} 
+      {{ carbon_source.type }}
     </li>
-  </ul>
+  </ul> 
   <input ng-model="footprint_item_number" type="number" step="0.1" class="form-control" style="width:70px;display:inline-block;" required> </input>
   &nbsp;
   <select class="selectpicker" ng-model="footprint_item_name">
     <optgroup label="Home">
-      <option>kilowatt-hours of Electricity</option>
       <option>gallons of Heating Oil</option>
       <option>gallons of Propane</option>
-      <option>therms of Natural Gas</option>
-      <option>therms of LP Gas</option>
-      <option>metric tons of Wood</option>
+      <option selected="selected">kilowatt-hours of Electricity</option>
       <option>metric tons of Coal</option>
+      <option>metric tons of Wood</option>
+      <option>therms of LP Gas</option>
+      <option>therms of Natural Gas</option>
     </optgroup>
     <optgroup label="Food">
       <option>pounds of Meat</option>
@@ -102,7 +102,7 @@
   <button type="submit" class="btn btn-default">Add</button>
 </form>
 
-<br><br>{{ footprint }}
+<br><br>{{ carbon_sources }}
 
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

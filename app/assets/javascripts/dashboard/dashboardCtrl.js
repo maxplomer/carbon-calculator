@@ -12,18 +12,30 @@ angular.module('carbonCalculator')
         $('#myModal').modal('toggle');
       };
 
-      $scope.footprint = { "carbon_sources": [] };
+      $scope.footprint = { "carbon_sources": {} };
 
       $scope.footprint_item_name = "kilowatt-hours of Electricity";
 
       $scope.addFootprintItem = function() {
-        $scope.footprint["carbon_sources"].push(
-          {
-            number: $scope.footprint_item_number,
-            name: $scope.footprint_item_name
-          }
-        )
+        var number = $scope.footprint_item_number;
+        var name = $scope.footprint_item_name;
+
+        $scope.footprint["carbon_sources"][name] = number;
         $scope.footprint_item_number = '';
+        $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
+      };
+
+      var convertHashToArray = function(input) {
+        var output = [], item;
+
+        for (var type in input) {
+            item = {};
+            item.type = type;
+            item.name = input[type];
+            output.push(item);
+        }
+
+        return output;
       };
 
       $scope.addPost = function(){
