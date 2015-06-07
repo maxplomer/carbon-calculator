@@ -53,7 +53,7 @@ angular.module('carbonCalculator')
       };
 
       //call changeSortMethod() here to set the sort variables
-      $scope.changeSortMethod('-co2_output', true); //flag=true will force descending
+      $scope.changeSortMethod('-id', true); //flag=true will force descending
 
       //Auth
 
