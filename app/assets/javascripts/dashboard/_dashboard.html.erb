@@ -75,7 +75,7 @@
       {{ carbon_source.type }}
     </li>
   </ul> 
-  <input ng-model="footprint_item_number" type="number" step="0.1" class="form-control" style="width:70px;display:inline-block;" required> </input>
+  <input ng-model="footprint_item_number" type="number" step="0.1" min="0.1" max="1000000000"class="form-control" style="width:100px;display:inline-block;" required> </input>
   &nbsp;
   <select class="selectpicker" ng-model="footprint_item_name">
     <optgroup label="Home">
