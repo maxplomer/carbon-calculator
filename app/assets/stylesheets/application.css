@@ -80,10 +80,10 @@ ul {
   height: 77px;
 }
 
-.form-control {
+/*.form-control {
   width: 100%;
   border: 1px solid yellow;
-}
+}*/
 
 .home-left-text > h1, .home-left-text > h4 {
   line-height: 150% !important;

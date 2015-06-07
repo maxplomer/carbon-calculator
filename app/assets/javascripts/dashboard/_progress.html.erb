@@ -2,11 +2,13 @@ PROGRESS
 
 <br><br>
 
-{{ posts }}
+<div style="width:80%; margin:auto;">
+  <canvas id="line" class="chart chart-line" data="data"
+    labels="labels" legend="true" series="series"
+    click="onClick">
+  </canvas> 
+</div>
 
 <br><br>
 
-<canvas id="line" class="chart chart-line" data="data"
-  labels="labels" legend="true" series="series"
-  click="onClick">
-</canvas> 
+{{ posts }}
