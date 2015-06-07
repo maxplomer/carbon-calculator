@@ -16,6 +16,10 @@ angular.module('carbonCalculator')
 
       $scope.footprint_item_name = "kilowatt-hours of Electricity";
 
+      $scope.removeFootprintItem = function(carbon_source_type) {
+        alert(carbon_source_type);
+      };
+
       $scope.addFootprintItem = function() {
         var number = $scope.footprint_item_number;
         var name = $scope.footprint_item_name;

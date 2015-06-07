@@ -67,14 +67,19 @@
   </div>
 </section>
 
-<form ng-submit="addFootprintItem()">
-  On an average day I am using:<br>
+On an average day I am using:<br>
   <ul style="list-style-type: circle;margin-top:5px">
-    <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'"> 
+    <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'" 
+      style="margin-bottom:5px;"> 
       {{ carbon_source.name }} 
       {{ carbon_source.type }}
+      <button class="btn btn-danger" style="height: 22px;padding: 0;opacity:0.5;"
+        ng-click="removeFootprintItem(carbon_source.type)">
+        remove
+      </button>
     </li>
   </ul> 
+<form ng-submit="addFootprintItem()">
   <input ng-model="footprint_item_number" type="number" step="0.1" min="0.1" max="1000000000"class="form-control" style="width:100px;display:inline-block;" required> </input>
   &nbsp;
   <select class="selectpicker" ng-model="footprint_item_name">
