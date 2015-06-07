@@ -72,7 +72,8 @@ On an average day I am using:<br>
     <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'" 
       style="margin-bottom:5px;"> 
       {{ carbon_source.name }} 
-      {{ carbon_source.type }}
+
+      {{ checkCarbonSource(carbon_source.type) }}
       <button class="btn btn-danger" style="height: 22px;padding: 0;opacity:0.5;"
         ng-click="removeFootprintItem(carbon_source.type)">
         remove
@@ -114,6 +115,7 @@ On an average day I am using:<br>
 <form ng-show="footprint['carbon_sources']['kilowatt-hours of Electricity']"
   ng-submit="addEnergySource">
   <br>Please select your electricity source:<br>
+  <input ng-model="energy_source"></input>
 
 
 </form>
@@ -122,7 +124,7 @@ On an average day I am using:<br>
 
 
 
-
+<br><br><br><br><br><br><br><br>
 
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

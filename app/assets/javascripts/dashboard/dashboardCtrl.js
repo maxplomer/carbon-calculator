@@ -15,6 +15,15 @@ angular.module('carbonCalculator')
       $scope.footprint = { "carbon_sources": {} };
 
       $scope.footprint_item_name = "kilowatt-hours of Electricity";
+      $scope.energy_source = '';
+
+      $scope.checkCarbonSource = function(name) {
+        if (name == 'kilowatt-hours of Electricity') {
+          return name.replace('Electricity', ' ' + $scope.energy_source + ' Electricity')
+        } 
+
+        return name;
+      };
 
       $scope.removeFootprintItem = function(name) {
         delete $scope.footprint["carbon_sources"][name];
