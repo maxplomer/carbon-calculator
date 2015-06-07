@@ -14,13 +14,16 @@ angular.module('carbonCalculator')
 
       $scope.footprint = { "carbon_sources": [] };
 
+      $scope.footprint_item_name = "kilowatt-hours of Electricity";
+
       $scope.addFootprintItem = function() {
         $scope.footprint["carbon_sources"].push(
           {
             number: $scope.footprint_item_number,
-            name: "helloworld"
+            name: $scope.footprint_item_name
           }
         )
+        $scope.footprint_item_number = '';
       };
 
       $scope.addPost = function(){
