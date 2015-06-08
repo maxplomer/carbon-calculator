@@ -1,7 +1,13 @@
 angular.module('carbonCalculator')
   .factory('posts', ['$http', function($http) {
 
-    var o = {posts: []};
+    var o = {posts: [], footprints: []};
+
+    o.createFootprint = function(footprint) {
+      return $http.post('/footprints', footprint).success(function(data){
+        o.footprints.push(data.footprint);
+      });
+    };
 
     o.getMyPosts = function() {
       return $http.get('/my_posts').success(function(data){
