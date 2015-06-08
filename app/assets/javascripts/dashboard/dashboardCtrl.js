@@ -14,18 +14,19 @@ angular.module('carbonCalculator')
         $('#myModal').modal('toggle');
       };
 
+      $scope.setEnergySource = function(energy_source) {
+        console.log('set energy source')
+        $scope.energy_source = energy_source;
+      };
+
+      $scope.addDailyAverageFootprint = function() {
+        console.log('add footprint')
+      };
+
       $scope.footprint = { "carbon_sources": {} };
 
       $scope.footprint_item_name = "kilowatt-hours of Electricity";
       $scope.energy_source = '';
-
-      $scope.checkCarbonSource = function(name) {
-        if (name == 'kilowatt-hours of Electricity') {
-          return name.replace('Electricity', ' ' + $scope.energy_source + ' Electricity')
-        } 
-
-        return name;
-      };
 
       $scope.removeFootprintItem = function(name) {
         delete $scope.footprint["carbon_sources"][name];
