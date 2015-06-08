@@ -60,6 +60,7 @@ angular.module('carbonCalculator')
         }
 
         console.log('add footprint')
+        posts.createFootprint($scope.footprint)
 
         //persist data
         console.log($scope.footprint)
