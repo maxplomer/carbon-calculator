@@ -32,6 +32,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'angularjs-rails'
+
 gem 'angular-rails-templates'
 
 gem 'rails_12factor'
