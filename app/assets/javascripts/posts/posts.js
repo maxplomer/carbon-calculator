@@ -4,7 +4,7 @@ angular.module('carbonCalculator')
     var o = {posts: [], footprints: []};
 
     o.createFootprint = function(footprint) {
-      return $http.post('/footprints', footprint).success(function(data){
+      return $http.post('/footprints', {'footprint': footprint}).success(function(data){
         o.footprints.push(data.footprint);
       });
     };

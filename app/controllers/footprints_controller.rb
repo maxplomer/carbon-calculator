@@ -6,7 +6,9 @@ class FootprintsController < ApplicationController
 
   	logger.info("HELLOWORLDHELLOWORLDHELLOWORLD")
 
-    logger.info(params.inspect)
+    logger.info(footprint_params)
+
+    logger.info("HELLOWORLDHELLOWORLDHELLOWORLD")
 
     # render json: Footprint.create(
     #   footprint_params.merge({
@@ -19,13 +21,20 @@ class FootprintsController < ApplicationController
 
   def footprint_params
     params.require(:footprint).permit(
-      :gal_of_gas_per_day,
-      :gal_of_hotwater_per_day,
-      :hotwater_source,
-      :kwh_of_energy_per_day,
       :energy_source,
-      :lbs_of_meat_per_day,
-      :airline_miles_per_year
+      carbon_sources: [
+		"gallons of Heating Oil",
+		"gallons of Propane",
+		"kilowatt-hours of Electricity",
+		"metric tons of Coal",
+		"metric tons of Wood",
+		"therms of LP Gas",
+		"therms of Natural Gas",
+		"pounds of Meat",
+		"gallons of Gasoline",
+		"miles in a Taxi",
+		"miles on a Bus"
+      ]
     )
   end
 
