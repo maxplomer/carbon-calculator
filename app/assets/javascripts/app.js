@@ -1,4 +1,4 @@
-angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.js'])
+angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.js', 'ngAnimate'])
   .config([
     '$stateProvider',
     '$urlRouterProvider',

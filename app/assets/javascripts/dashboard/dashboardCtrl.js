@@ -8,6 +8,8 @@ angular.module('carbonCalculator')
 
       $scope.posts = posts.posts;
 
+      $('.selectpicker').selectpicker();
+
       $scope.newFootprint = function() {
         $('#myModal').modal('toggle');
       };
