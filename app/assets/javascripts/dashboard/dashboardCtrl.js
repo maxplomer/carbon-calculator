@@ -35,6 +35,13 @@ angular.module('carbonCalculator')
         console.log('add footprint')
         $scope.footprint = { "carbon_sources": {} };
         $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
+        
+        //clear the energy sources
+        $scope.energy_source = '';
+        x = document.getElementsByClassName("btn-primary")
+        angular.forEach(x, function(radio_button) {
+          angular.element(radio_button).removeClass('active');   
+        });
 
       };
 
