@@ -45,7 +45,6 @@ angular.module('carbonCalculator')
         $scope.footprint["energy_source"] = energy_source;
         $scope.energySourceError = false;
       };
-
       
       $scope.addDailyAverageFootprint = function() {
         var name = "kilowatt-hours of Electricity";
@@ -68,7 +67,6 @@ angular.module('carbonCalculator')
         angular.forEach(x, function(radio_button) {
           angular.element(radio_button).removeClass('active');   
         });
-
       };
 
       var convertHashToArray = function(input) {
