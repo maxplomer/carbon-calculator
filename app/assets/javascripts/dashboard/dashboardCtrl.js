@@ -33,6 +33,9 @@ angular.module('carbonCalculator')
           $scope.blankFormError = true;
         }
         console.log('add footprint')
+        $scope.footprint = { "carbon_sources": {} };
+        $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
+
       };
 
       $scope.footprint = { "carbon_sources": {} };
