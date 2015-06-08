@@ -129,22 +129,18 @@ On an average day I am using:<br>
 
 <br><br><br><br>
 
-Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
-<div>
-  Show:
-  <div class="check-element animate-show" ng-show="checked">
-     I show up when your checkbox is checked.
-  </div>
-</div>
-<div>
-  Hide:
-  <div class="check-element animate-show" ng-hide="checked">
-    <span class="glyphicon glyphicon-thumbs-down"></span> I hide when your checkbox is checked.
-  </div>
-</div>
+  <p>
+    <button ng-click="show=!show">Toggle</button>
+  </p>
+  <div ng-show="show" class="blue-div animate-show">A</div>
+  <div ng-hide="show" class="green-div animate-show">B</div>
 
 
-<br><br><br><br>
+<br><br>
+
+{{ angular_modules }}
+
+<br><br>
 
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

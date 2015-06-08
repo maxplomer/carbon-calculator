@@ -1,4 +1,17 @@
-angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.js'])
+(function() {
+    var orig = angular.module;
+    angular.modules = [];
+    angular.module = function() {
+        var args = Array.prototype.slice.call(arguments);
+        if (arguments.length > 1) {
+            angular.modules.push(arguments[0]);
+        }
+        return orig.apply(null, args);
+    }
+})();
+
+
+angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.js', 'ngAnimate'])
   .config([
     '$stateProvider',
     '$urlRouterProvider',

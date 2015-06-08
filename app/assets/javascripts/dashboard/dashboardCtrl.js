@@ -6,6 +6,10 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
+      $scope.show = false; 
+
+      $scope.angular_modules = angular.modules
+
       $scope.posts = posts.posts;
 
       $scope.newFootprint = function() {
