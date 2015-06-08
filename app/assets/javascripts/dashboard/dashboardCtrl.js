@@ -20,12 +20,17 @@ angular.module('carbonCalculator')
       };
 
       $scope.energySourceError = false;
+      $scope.blankFormError = false;
       $scope.addDailyAverageFootprint = function() {
         var name = "kilowatt-hours of Electricity";
         var value = $scope.footprint["carbon_sources"][name];
         if (value > 0 && $scope.energy_source == '') {
           $scope.energySourceError = true;
           return;
+        }
+        var x = $scope.carbon_sources;
+        if (typeof x === 'undefined' || x.length == 0) {
+          $scope.blankFormError = true;
         }
         console.log('add footprint')
       };
@@ -44,6 +49,7 @@ angular.module('carbonCalculator')
       };
 
       $scope.addFootprintItem = function() {
+        $scope.blankFormError = false;
         var number = $scope.footprint_item_number;
         var name = $scope.footprint_item_name;
 
