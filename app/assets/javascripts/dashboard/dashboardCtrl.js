@@ -56,6 +56,7 @@ angular.module('carbonCalculator')
         var x = $scope.carbon_sources;
         if (typeof x === 'undefined' || x.length == 0) {
           $scope.blankFormError = true;
+          return;
         }
         console.log('add footprint')
         $scope.footprint = { "carbon_sources": {} };
@@ -67,6 +68,7 @@ angular.module('carbonCalculator')
         angular.forEach(x, function(radio_button) {
           angular.element(radio_button).removeClass('active');   
         });
+        $('#myModal').modal('toggle');
       };
 
       var convertHashToArray = function(input) {

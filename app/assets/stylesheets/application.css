@@ -283,6 +283,11 @@ ul {
 }
 
 
+.btn-primary {
+  margin: 2px 4px;
+  border-radius: 4px !important;
+}
+
 /* --- media queries --- */
 
 @media(max-width:767px) {

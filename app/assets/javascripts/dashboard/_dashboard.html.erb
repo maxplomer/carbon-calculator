@@ -67,6 +67,34 @@
   </div>
 </section>
 
+
+
+
+
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div id="myModalContent2" class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a New Daily Average Footprint</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 On an average day I am using:<br>
   <ul style="list-style-type: circle;margin-top:5px">
     <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'" 
@@ -118,26 +146,44 @@ On an average day I am using:<br>
   class="my-animation">
   <br>Please select your electricity source:<br>
   <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary" ng-click="setEnergySource('Biomass')">
-      <input type="radio"> Biomass
-    </label>
     <label class="btn btn-primary" ng-click="setEnergySource('Coal')">
       <input type="radio"> Coal
     </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Concentrated Solar Power')">
-      <input type="radio"> Concentrated Solar Power
+    <label class="btn btn-primary" ng-click="setEnergySource('Diesel')">
+      <input type="radio"> Diesel
     </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Geothermal')">
-      <input type="radio"> Geothermal
+    <label class="btn btn-primary" ng-click="setEnergySource('Heavy Oil')">
+      <input type="radio"> Heavy Oil
     </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Hydropower')">
-      <input type="radio"> Hydropower
+    <label class="btn btn-primary" ng-click="setEnergySource('Fuel Cell')">
+      <input type="radio"> Fuel Cell
     </label>
     <label class="btn btn-primary" ng-click="setEnergySource('Natural Gas')">
       <input type="radio"> Natural Gas
     </label>
     <label class="btn btn-primary" ng-click="setEnergySource('Nuclear')">
       <input type="radio"> Nuclear
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Geothermal')">
+      <input type="radio"> Geothermal
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Solar PV')">
+      <input type="radio"> Solar PV
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Biomass')">
+      <input type="radio"> Biomass
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Solar Thermal')">
+      <input type="radio"> Solar Thermal
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Biogas')">
+      <input type="radio"> Biogas
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Hydroelectric')">
+      <input type="radio"> Hydroelectric
+    </label>
+    <label class="btn btn-primary" ng-click="setEnergySource('Wind')">
+      <input type="radio"> Wind
     </label>
   </div>
 </div>
@@ -147,80 +193,17 @@ On an average day I am using:<br>
 <button class="btn btn-info" ng-click="addDailyAverageFootprint()">Submit Daily Average Footprint</button>
 
 
-<br><br>{{ footprint }}
 
 
 
-<br><br><br><br>
 
 
 
-<br><br><br><br>
 
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div id="myModalContent2" class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a New Footprint</h4>
-      </div>
-      <div class="modal-body">
-        <form ng-submit="addPost()">
-          <div class="form-group">
-            <label>Gallons of Gasoline per Day</label>
-            <input type="number" step="0.1" class="form-control" placeholder="Gallons of Gasoline per Day" ng-model="gal_of_gas_per_day" required></input>
-          </div>
-          <div class="form-group">
-            <label>Gallons of Hot Water per Day</label>
-            <input type="number" step="0.1" class="form-control" placeholder="Gallons of Hot Water per Day" ng-model="gal_of_hotwater_per_day" required></input>
-          </div>
-          <div class="form-group">
-            <label>Hot Water Source</label><br>
-            <label class="radio-inline">
-            <input type="radio" ng-model="hotwater_source" name="hotwater_source" value="Oil" required> Oil
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="hotwater_source" name="hotwater_source" value="Electric" required> Electric
-            </label>
-          </div>
-          <div class="form-group">
-            <label>kWh of Energy per Day (excluding electric hot water)</label>
-            <input type="number" step="0.1" class="form-control" placeholder="kWh of Energy per Day" ng-model="kwh_of_energy_per_day" required></input>
-          </div>
-          <div class="form-group">
-            <label>Energy Source</label><br>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Biomass" required> Biomass
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Coal" required> Coal
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Concentrated Solar Power" required> Concentrated Solar Power
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Geothermal" required> Geothermal
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Hydropower" required> Hydropower
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Natural Gas" required> Natural Gas
-            </label>
-            <label class="radio-inline">
-            <input type="radio" ng-model="energy_source" name="energy_source" value="Nuclear" required> Nuclear
-            </label>
-          </div>
-          <div class="form-group">
-            <label>Lbs of Meat per Day</label>
-            <input type="number" step="0.1" class="form-control" placeholder="Lbs of Meat per Day" ng-model="lbs_of_meat_per_day" required></input>
-          </div>
-          <div class="form-group">
-            <label>Airline Miles per Year</label>
-            <input type="number" step="0.1" class="form-control" placeholder="Airline Miles per Year" ng-model="airline_miles_per_year" required></input>
-          </div>
-          <button type="submit" class="btn btn-primary">Post</button>
-        </form>
+
+
+
+
       </div>
     </div>
   </div>
