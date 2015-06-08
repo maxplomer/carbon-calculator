@@ -6,21 +6,47 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
-      $scope.posts = posts.posts;
+      //set initial values
+      $scope.footprint = { "carbon_sources": {} };
+      $scope.footprint_item_name = "kilowatt-hours of Electricity";
+      $scope.energy_source = '';
 
+      //new footprint errors
+      $scope.energySourceError = false;
+      $scope.blankFormError = false;
+      
+      //active bootstrap-select
       $('.selectpicker').selectpicker();
 
       $scope.newFootprint = function() {
         $('#myModal').modal('toggle');
       };
 
+      $scope.addFootprintItem = function() {
+        $scope.blankFormError = false;
+        var number = $scope.footprint_item_number;
+        var name = $scope.footprint_item_name;
+
+        $scope.footprint["carbon_sources"][name] = number;
+        $scope.footprint_item_number = '';
+        $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
+      };
+
+      $scope.removeFootprintItem = function(name) {
+        delete $scope.footprint["carbon_sources"][name];
+        $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
+        if (name == "kilowatt-hours of Electricity") {
+          $scope.energySourceError = false;
+        }
+      };
+
       $scope.setEnergySource = function(energy_source) {
         $scope.energy_source = energy_source;
+        $scope.footprint["energy_source"] = energy_source;
         $scope.energySourceError = false;
       };
 
-      $scope.energySourceError = false;
-      $scope.blankFormError = false;
+      
       $scope.addDailyAverageFootprint = function() {
         var name = "kilowatt-hours of Electricity";
         var value = $scope.footprint["carbon_sources"][name];
@@ -45,29 +71,6 @@ angular.module('carbonCalculator')
 
       };
 
-      $scope.footprint = { "carbon_sources": {} };
-
-      $scope.footprint_item_name = "kilowatt-hours of Electricity";
-      $scope.energy_source = '';
-
-      $scope.removeFootprintItem = function(name) {
-        delete $scope.footprint["carbon_sources"][name];
-        $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
-        if (name == "kilowatt-hours of Electricity") {
-          $scope.energySourceError = false;
-        }
-      };
-
-      $scope.addFootprintItem = function() {
-        $scope.blankFormError = false;
-        var number = $scope.footprint_item_number;
-        var name = $scope.footprint_item_name;
-
-        $scope.footprint["carbon_sources"][name] = number;
-        $scope.footprint_item_number = '';
-        $scope.carbon_sources = convertHashToArray($scope.footprint["carbon_sources"]);
-      };
-
       var convertHashToArray = function(input) {
         var output = [], item;
 
@@ -81,6 +84,8 @@ angular.module('carbonCalculator')
         return output;
       };
 
+      //old data structure
+      $scope.posts = posts.posts;
       $scope.addPost = function(){
         posts.create({
           gal_of_gas_per_day: $scope.gal_of_gas_per_day,
@@ -103,7 +108,6 @@ angular.module('carbonCalculator')
       };
 
       //Auth
-
       $scope.logout = function() {
         Auth.logout().then(function() {
           $state.go('home');
