@@ -67,11 +67,6 @@
   </div>
 </section>
 
-
-
-
-
-
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div id="myModalContent2" class="modal-content">
@@ -80,130 +75,97 @@
         <h4 class="modal-title" id="myModalLabel">Add a New Daily Average Footprint</h4>
       </div>
       <div class="modal-body">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-On an average day I am using:<br>
-  <ul style="list-style-type: circle;margin-top:5px">
-    <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'" 
-      style="margin-bottom:5px;"> 
-      {{ carbon_source.name }} 
-
-      <span ng-show="carbon_source.type == 'kilowatt-hours of Electricity'">
-        {{ carbon_source.type.replace('Electricity', ' ' + energy_source + ' Electricity') }}
-      </span>
-      <span ng-hide="carbon_source.type == 'kilowatt-hours of Electricity'">
-        {{ carbon_source.type }}
-      </span>
-      <button class="btn btn-danger" style="height: 22px;padding: 0;opacity:0.5;"
-        ng-click="removeFootprintItem(carbon_source.type)">
-        remove
-      </button>
-    </li>
-  </ul> 
-<form ng-submit="addFootprintItem()">
-  <input ng-model="footprint_item_number" type="number" step="0.1" min="0.1" max="1000000000"class="form-control" style="width:100px;display:inline-block;" required> </input>
-  &nbsp;
-  <select class="selectpicker" ng-model="footprint_item_name">
-    <optgroup label="Home">
-      <option>gallons of Heating Oil</option>
-      <option>gallons of Propane</option>
-      <option selected="selected">kilowatt-hours of Electricity</option>
-      <option>metric tons of Coal</option>
-      <option>metric tons of Wood</option>
-      <option>therms of LP Gas</option>
-      <option>therms of Natural Gas</option>
-    </optgroup>
-    <optgroup label="Food">
-      <option>pounds of Meat</option>
-    </optgroup>
-    <optgroup label="Transportation">
-      <option>gallons of Gasoline</option>
-      <option>miles in a Taxi</option>
-      <option>miles on a Bus</option>
-    </optgroup>
-  </select>
-  &nbsp;
-
-  <button type="submit" class="btn btn-default">Add</button>
-</form>
-
-<span ng-show="blankFormError" class="my-animation" style="color:rgb(255,100,100);font-weight:bold">Please add a source of carbon emissions!</span>
-
-<div ng-show="footprint['carbon_sources']['kilowatt-hours of Electricity']"
-  class="my-animation">
-  <br>Please select your electricity source:<br>
-  <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary" ng-click="setEnergySource('Coal')">
-      <input type="radio"> Coal
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Diesel')">
-      <input type="radio"> Diesel
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Heavy Oil')">
-      <input type="radio"> Heavy Oil
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Fuel Cell')">
-      <input type="radio"> Fuel Cell
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Natural Gas')">
-      <input type="radio"> Natural Gas
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Nuclear')">
-      <input type="radio"> Nuclear
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Geothermal')">
-      <input type="radio"> Geothermal
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Solar PV')">
-      <input type="radio"> Solar PV
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Biomass')">
-      <input type="radio"> Biomass
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Solar Thermal')">
-      <input type="radio"> Solar Thermal
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Biogas')">
-      <input type="radio"> Biogas
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Hydroelectric')">
-      <input type="radio"> Hydroelectric
-    </label>
-    <label class="btn btn-primary" ng-click="setEnergySource('Wind')">
-      <input type="radio"> Wind
-    </label>
-  </div>
-</div>
-<span ng-show="energySourceError" class="my-animation" style="color:rgb(255,100,100);font-weight:bold"">Please select an energy source!</span>
-<br><br>
-
-<button class="btn btn-info" ng-click="addDailyAverageFootprint()">Submit Daily Average Footprint</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
+        On an average day I am using:<br>
+        <ul style="list-style-type: circle;margin-top:5px">
+          <li ng-repeat="carbon_source in carbon_sources | orderBy:'type'" 
+            style="margin-bottom:5px;"> 
+            {{ carbon_source.name }} 
+            <span ng-show="carbon_source.type == 'kilowatt-hours of Electricity'">
+            {{ carbon_source.type.replace('Electricity', ' ' + energy_source + ' Electricity') }}
+            </span>
+            <span ng-hide="carbon_source.type == 'kilowatt-hours of Electricity'">
+            {{ carbon_source.type }}
+            </span>
+            <button class="btn btn-danger" style="height: 22px;padding: 0;opacity:0.5;"
+              ng-click="removeFootprintItem(carbon_source.type)">
+            remove
+            </button>
+          </li>
+        </ul>
+        <form ng-submit="addFootprintItem()">
+          <input ng-model="footprint_item_number" type="number" step="0.1" min="0.1" max="1000000000"class="form-control" style="width:100px;display:inline-block;" required> </input>
+          &nbsp;
+          <select class="selectpicker" ng-model="footprint_item_name">
+            <optgroup label="Home">
+              <option>gallons of Heating Oil</option>
+              <option>gallons of Propane</option>
+              <option selected="selected">kilowatt-hours of Electricity</option>
+              <option>metric tons of Coal</option>
+              <option>metric tons of Wood</option>
+              <option>therms of LP Gas</option>
+              <option>therms of Natural Gas</option>
+            </optgroup>
+            <optgroup label="Food">
+              <option>pounds of Meat</option>
+            </optgroup>
+            <optgroup label="Transportation">
+              <option>gallons of Gasoline</option>
+              <option>miles in a Taxi</option>
+              <option>miles on a Bus</option>
+            </optgroup>
+          </select>
+          &nbsp;
+          <button type="submit" class="btn btn-default">Add</button>
+        </form>
+        <span ng-show="blankFormError" class="my-animation" style="color:rgb(255,100,100);font-weight:bold">Please add a source of carbon emissions!</span>
+        <div ng-show="footprint['carbon_sources']['kilowatt-hours of Electricity']"
+          class="my-animation">
+          <br>Please select your electricity source:<br>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary" ng-click="setEnergySource('Coal')">
+            <input type="radio"> Coal
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Diesel')">
+            <input type="radio"> Diesel
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Heavy Oil')">
+            <input type="radio"> Heavy Oil
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Fuel Cell')">
+            <input type="radio"> Fuel Cell
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Natural Gas')">
+            <input type="radio"> Natural Gas
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Nuclear')">
+            <input type="radio"> Nuclear
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Geothermal')">
+            <input type="radio"> Geothermal
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Solar PV')">
+            <input type="radio"> Solar PV
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Biomass')">
+            <input type="radio"> Biomass
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Solar Thermal')">
+            <input type="radio"> Solar Thermal
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Biogas')">
+            <input type="radio"> Biogas
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Hydroelectric')">
+            <input type="radio"> Hydroelectric
+            </label>
+            <label class="btn btn-primary" ng-click="setEnergySource('Wind')">
+            <input type="radio"> Wind
+            </label>
+          </div>
+        </div>
+        <span ng-show="energySourceError" class="my-animation" style="color:rgb(255,100,100);font-weight:bold"">Please select an energy source!</span>
+        <br><br>
+        <button class="btn btn-info" ng-click="addDailyAverageFootprint()">Submit Daily Average Footprint</button>
       </div>
     </div>
   </div>
