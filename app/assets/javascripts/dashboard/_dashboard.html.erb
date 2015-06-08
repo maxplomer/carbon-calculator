@@ -112,7 +112,7 @@ On an average day I am using:<br>
   <button type="submit" class="btn btn-default">Add</button>
 </form>
 
-<span ng-show="blankFormError" class="my-animation" style="color:red">Please add a source of carbon emissions!</span>
+<span ng-show="blankFormError" class="my-animation" style="color:rgb(255,100,100);font-weight:bold">Please add a source of carbon emissions!</span>
 
 <div ng-show="footprint['carbon_sources']['kilowatt-hours of Electricity']"
   class="my-animation">
@@ -141,8 +141,8 @@ On an average day I am using:<br>
     </label>
   </div>
 </div>
-<span ng-show="energySourceError" class="my-animation" style="color:red">Please select an energy source!</span>
-<br><br><br>
+<span ng-show="energySourceError" class="my-animation" style="color:rgb(255,100,100);font-weight:bold"">Please select an energy source!</span>
+<br><br>
 
 <button class="btn btn-info" ng-click="addDailyAverageFootprint()">Submit Daily Average Footprint</button>
 
