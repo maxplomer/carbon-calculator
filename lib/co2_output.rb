@@ -1,4 +1,8 @@
 module Co2Output
+
+  def Co2Output.truncate(x)
+    (x * 100).round / 100.0
+  end
  
   def Co2Output.calculate_co2_output(footprint)
     energy_source = footprint.energy_source # "Coal"
@@ -115,7 +119,7 @@ module Co2Output
       end
     end
 
-    result
+    self.truncate(result)
   end
 
 end
