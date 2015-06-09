@@ -17,7 +17,7 @@ module Co2Output
     # Wood            100 metric tons              5.59
     # Taxi            1000000 miles                285.73
     # Bus             1000000 miles                163.42
-
+    # Car             1000000 miles at 1 mpg       8295.32
 
     # conversion to per unit, and from metric tonnes to gram
     # 
@@ -27,20 +27,23 @@ module Co2Output
     #   "Coal" => 1000000 * 284.67 / 100,
     #   "LP Gas" => 1000000 * 628.63 / 100000,
     #   "Propane" => 1000000 * 568.64 / 100000,
-    #   "Wood" => 1000000 * 5.59 / 100
-    #   "Taxi" => 1000000 * 285.73 / 1000000
+    #   "Wood" => 1000000 * 5.59 / 100,
+    #   "Taxi" => 1000000 * 285.73 / 1000000,
+    #   "Bus" => 1000000 * 163.42 / 1000000,
+    #   "Car" => 1000000 * 8295.32 / 1000000
     # }
 
     #unit: (gCO2e/kWh)
     co2_carbon_sources = {
       "therms of Natural Gas" => 5420.93, 
-      "US gallons of Heating Oil" => 9606.9, 
+      "gallons of Heating Oil" => 9606.9, 
       "metric tons of Coal" => 2846700.0, 
       "therms of LP Gas" => 6286.3, 
-      "US gallons of Propane" => 5686.4, 
+      "gallons of Propane" => 5686.4, 
       "metric tons of Wood" => 55900.0,
       "miles in a Taxi" => 285.73,
-      "miles on a Bus" => 163.42
+      "miles on a Bus" => 163.42,
+      "gallons of Gasoline" => 8295.32
     } 
 
     # co2e for different power sources, unit: tonnes CO2e/GWh
