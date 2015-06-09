@@ -28,6 +28,15 @@ module Co2Output
     #   "Wood" => 1000000 * 5.59 / 100
     # }
 
+    #unit: (gCO2e/kWh)
+    co2_carbon_sources = {
+      "therms of Natural Gas" => 5420.93, 
+      "US gallons of Heating Oil" => 9606.9, 
+      "metric tons of Coal" => 2846700.0, 
+      "therms of LP Gas" => 6286.3, 
+      "US gallons of Propane" => 5686.4, 
+      "metric tons of Wood" => 55900.0
+    } 
 
     # co2e for different power sources, unit: tonnes CO2e/GWh
     # source http://www.nirs.org/climate/background/sovacool_nuclear_ghg.pdf
@@ -56,7 +65,7 @@ module Co2Output
     # Coal               Various generator types with scrubbing                  960
     # Coal               Various generator types without scrubbing              1050
 
-    # Final numbers, using lowest number for each source
+    # (using lowest number for each source)
      
     #unit: (gCO2e/kWh)
     co2_energy_sources = {
@@ -78,33 +87,17 @@ module Co2Output
       "Coal" => 960
     }
 
-    #unit: (gCO2e/kWh)
-    co2_carbon_sources = {
-      "Natural Gas"=>5420.93, 
-      "Heating Oil"=>9606.9, 
-      "Coal"=>2846700.0, 
-      "LP Gas"=>6286.3, 
-      "Propane"=>5686.4, 
-      "Wood"=>55900.0
-    } 
-
-
-
     result = 0
 
+    carbon_sources.each do |source, amount|
+      if source == "kilowatt-hours of Electricity"
+        result += co2_energy_sources[energy_source] * amount
+      else
+        result += co2_carbon_sources[source] * amount
+      end
+    end
 
-
-
-
-
-
-
-
-
-
-
-
-    123.456
+    result
   end
 
 end
