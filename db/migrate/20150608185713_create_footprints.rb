@@ -4,6 +4,7 @@ class CreateFootprints < ActiveRecord::Migration
       t.integer :user_id
       t.string :energy_source
       t.text :carbon_sources
+      t.float :co2_output
 
       t.timestamps
     end

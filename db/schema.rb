@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150608185713) do
     t.integer  "user_id"
     t.string   "energy_source"
     t.text     "carbon_sources"
+    t.float    "co2_output"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
