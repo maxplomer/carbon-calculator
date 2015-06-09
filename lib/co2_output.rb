@@ -33,7 +33,7 @@ module Co2Output
     #   "Car" => 1000000 * 8295.32 / 1000000
     # }
 
-    #unit: (gCO2e/kWh)
+    #unit: (gCO2e/unit)
     co2_carbon_sources = {
       "therms of Natural Gas" => 5420.93, 
       "gallons of Heating Oil" => 9606.9, 
@@ -94,6 +94,16 @@ module Co2Output
       "Heavy oil" => 778,
       "Coal" => 960
     }
+
+    #for meat http://www.ewg.org/meateatersguide/a-meat-eaters-guide-to-climate-change-health-what-you-eat-matters/climate-and-environmental-impacts/
+    # should add feature so you can pick your meat
+    # assume beef, 27.0 kg CO2e per kg
+    # note, 1 kg = 1000 g = 2.20462 lb
+
+    # grams of CO2e per lb of meat = 27.0 (1000 * g * CO2e) / (2.20462 lb)
+
+    #unit: (gCO2e/pound)
+    co2_carbon_sources["pounds of Meat"] = 12247.008554762273 
 
     result = 0
 
