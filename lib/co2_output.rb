@@ -100,7 +100,6 @@ module Co2Output
     }
 
     #for meat http://www.ewg.org/meateatersguide/a-meat-eaters-guide-to-climate-change-health-what-you-eat-matters/climate-and-environmental-impacts/
-    # should add feature so you can pick your meat
     # assume beef, 27.0 kg CO2e per kg
     # note, 1 kg = 1000 g = 2.20462 lb
 
