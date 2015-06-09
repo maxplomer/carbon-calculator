@@ -17,6 +17,17 @@ module Co2Output
     # Wood            100 metric tons              5.59
 
 
+    # conversion to per unit, and from metric tonnes to gram
+    # 
+    # co2_carbon_sources = {                       
+    #   "Natural Gas" => 1000000 * 5420.93 / 1000000,
+    #   "Heating Oil" => 1000000 * 960.69 / 100000,
+    #   "Coal" => 1000000 * 284.67 / 100,
+    #   "LP Gas" => 1000000 * 628.63 / 100000,
+    #   "Propane" => 1000000 * 568.64 / 100000,
+    #   "Wood" => 1000000 * 5.59 / 100
+    # }
+
 
     # co2e for different power sources, unit: tonnes CO2e/GWh
     # source http://www.nirs.org/climate/background/sovacool_nuclear_ghg.pdf
@@ -49,41 +60,33 @@ module Co2Output
      
     #unit: (gCO2e/kWh)
     co2_energy_sources = {
-      "Wind": 9,
-      "Hydroelectric": 10,
-      "Wind": 10,
-      "Biogas": 11,
-      "Solar thermal": 13,
-      "Biomass": 14,
-      "Solar PV": 32,
-      "Biomass": 35,
-      "Geothermal": 38,
-      "Biomass": 41,
-      "Nuclear": 66,
-      "Natural gas": 443,
-      "Fuel cell": 664,
-      "Diesel": 778,
-      "Heavy oil": 778,
-      "Coal": 960
+      "Wind" => 9,
+      "Hydroelectric" => 10,
+      "Wind" => 10,
+      "Biogas" => 11,
+      "Solar thermal" => 13,
+      "Biomass" => 14,
+      "Solar PV" => 32,
+      "Biomass" => 35,
+      "Geothermal" => 38,
+      "Biomass" => 41,
+      "Nuclear" => 66,
+      "Natural gas" => 443,
+      "Fuel cell" => 664,
+      "Diesel" => 778,
+      "Heavy oil" => 778,
+      "Coal" => 960
     }
-
-1 metric tonnes = 1 000 000 grams
 
     #unit: (gCO2e/kWh)
     co2_carbon_sources = {
-    Natural Gas:
-    1000000 therms = 5420.93 metric tons of CO2e
-    Heating Oil:
-    100000 US gallons = 960.69 metric tons of CO2e
-    Coal:
-    100 metric tons = 284.67 metric tons of CO2e
-    LP Gas:
-    100000 therms = 628.63 metric tons of CO2e
-    Propane:
-    100000 US gallons = 568.64 metric tons of CO2e
-    Wood:
-    100 metric tons = 5.59 metric tons of CO2e
-    }
+      "Natural Gas"=>5420.93, 
+      "Heating Oil"=>9606.9, 
+      "Coal"=>2846700.0, 
+      "LP Gas"=>6286.3, 
+      "Propane"=>5686.4, 
+      "Wood"=>55900.0
+    } 
 
 
 
