@@ -9,6 +9,20 @@ angular.module('carbonCalculator')
       });
     };
 
+    o.getMyFootprints = function() {
+      return $http.get('/my_footprints').success(function(data){
+        angular.copy(data.my_footprints, o.footprints);
+      });
+    };
+
+    o.getRecentFootprints = function() {
+      return $http.get('/recent_footprints').success(function(data){
+        angular.copy(data.recent_footprints, o.footprints);
+      });
+    };
+
+    // old data structure
+
     o.getMyPosts = function() {
       return $http.get('/my_posts').success(function(data){
         angular.copy(data.my_posts, o.posts);

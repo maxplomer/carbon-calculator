@@ -1,0 +1,2 @@
+module MyFootprintsHelper
+end
