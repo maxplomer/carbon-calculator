@@ -15,6 +15,8 @@ module Co2Output
     # LP Gas          100000 therms                628.63
     # Propane         100000 US gallons            568.64
     # Wood            100 metric tons              5.59
+    # Taxi            1000000 miles                285.73
+    # Bus             1000000 miles                163.42
 
 
     # conversion to per unit, and from metric tonnes to gram
@@ -26,6 +28,7 @@ module Co2Output
     #   "LP Gas" => 1000000 * 628.63 / 100000,
     #   "Propane" => 1000000 * 568.64 / 100000,
     #   "Wood" => 1000000 * 5.59 / 100
+    #   "Taxi" => 1000000 * 285.73 / 1000000
     # }
 
     #unit: (gCO2e/kWh)
@@ -35,7 +38,9 @@ module Co2Output
       "metric tons of Coal" => 2846700.0, 
       "therms of LP Gas" => 6286.3, 
       "US gallons of Propane" => 5686.4, 
-      "metric tons of Wood" => 55900.0
+      "metric tons of Wood" => 55900.0,
+      "miles in a Taxi" => 285.73,
+      "miles on a Bus" => 163.42
     } 
 
     # co2e for different power sources, unit: tonnes CO2e/GWh
