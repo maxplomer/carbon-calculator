@@ -6,6 +6,8 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
+      $scope.footprints = posts.footprints;
+
       //set initial values
       $scope.footprint = { "carbon_sources": {} };
       $scope.footprint_item_name = "kilowatt-hours of Electricity";
