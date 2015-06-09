@@ -24,52 +24,51 @@ module Co2Output
 
 
     # co2e for different power sources, unit: tonnes CO2e/GWh
+    # source http://www.nirs.org/climate/background/sovacool_nuclear_ghg.pdf
+    #  
+    # Technology         Capacity/configuration/fuel                  Estimate (gCO2e/kWh)
+    # Wind               2.5 MW, offshore                                          9
+    # Hydroelectric      3.1 MW, reservoir                                        10
+    # Wind               1.5 MW, onshore                                          10
+    # Biogas             Anaerobic digestion                                      11
+    # Hydroelectric      300 kW, run-of-river                                     13
+    # Solar thermal      80 MW, parabolic trough                                  13
+    # Biomass            Forest wood Co-combustion with hard coal                 14
+    # Biomass            Forest wood steam turbine                                22
+    # Biomass            Short rotation forestry Co-combustion with hard coal     23
+    # Biomass            FOREST WOOD reciprocating engine                         27
+    # Biomass            Waste wood steam turbine                                 31
+    # Solar PV           Polycrystalline silicone                                 32
+    # Biomass            Short rotation forestry steam turbine                    35
+    # Geothermal         80 MW, hot dry rock                                      38
+    # Biomass            Short rotation forestry reciprocating engine             41
+    # Nuclear            Various reactor types                                    66
+    # Natural gas        Various combined cycle turbines                         443
+    # Fuel cell          Hydrogen from gas reforming                             664
+    # Diesel             Various generator and turbine types                     778
+    # Heavy oil          Various generator and turbine types                     778
+    # Coal               Various generator types with scrubbing                  960
+    # Coal               Various generator types without scrubbing              1050
 
-    # source       mean   low   high
-    # Coal          888   756   1310
-    # Oil           733   547    935
-    # Natural Gas   499   362    891
-    # Solar PV       85    13    731
-    # Biomass        45    10    101
-    # Nuclear        29     2    130
-    # Hydroelectric  26     2    237
-    # Wind           26     6    124 
-
-    # http://www.world-nuclear.org/uploadedFiles/org/WNA/Publications/Working_Group_Reports/comparison_of_lifecycle.pdf
-
-    ##### Estimates
-    # since http://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources
-    # says Solar Thermal is about same impact as hydropower and wind, and I can infer other ratios as well...
-    # Therefore I will assume:
-    # Solar Thermal = 26 tonnes CO2e/GWh
-    # Biogas =  26 tonnes CO2e/GWh
-    # Diesel = 733 tonnes CO2e/GWh
-    # Fuel Cell = ( 664 / 778 ) * 733 tonnes CO2e/GWh    (used ratio to heavy oil)
-
-
-    # revision for nuclear
-    # Sovacool survey says nuclear is about 66/443 that of natural gas
-    # Nuclear = ( 66 / 443 ) * 499
-
-    #still need meat taxi and bus 
-    
-
-    # Final numbers
+    # Final numbers, using lowest number for each source
 
     co2_energy_sources = {
-      "Coal": 888,
-      "Diesel": 733,
-      "Heavy Oil": 733,
-      "Fuel Cell": 626,
-      "Natural Gas": 499,
-      "Nuclear": 74,
-      "Geothermal": ,
-      "Solar PV": 85,
-      "Biomass": 45,
-      "Solar Thermal": 26,
-      "Biogas": 26,
-      "Hydroelectric": 26,
-      "Wind": 26
+      "Wind": 9,
+      "Hydroelectric": 10,
+      "Wind": 10,
+      "Biogas": 11,
+      "Solar thermal": 13,
+      "Biomass": 14,
+      "Solar PV": 32,
+      "Biomass": 35,
+      "Geothermal": 38,
+      "Biomass": 41,
+      "Nuclear": 66,
+      "Natural gas": 443,
+      "Fuel cell": 664,
+      "Diesel": 778,
+      "Heavy oil": 778,
+      "Coal": 960
     }
 
 
