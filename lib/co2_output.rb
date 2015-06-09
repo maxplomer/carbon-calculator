@@ -6,21 +6,16 @@ module Co2Output
 
 
     # conversion to equivalent carbon dioxide (CO2e), numbers from carbonfootprint.com
-  
-    # Electricity (on average, not using):
-    # 100000 kWh = 537.5 metric tons of CO2e
-    # Natural Gas:
-    # 1000000 therms = 5420.93 metric tons of CO2e
-    # Heating Oil:
-    # 100000 US gallons = 960.69 metric tons of CO2e
-    # Coal:
-    # 100 metric tons = 284.67 metric tons of CO2e
-    # LP Gas:
-    # 100000 therms = 628.63 metric tons of CO2e
-    # Propane:
-    # 100000 US gallons = 568.64 metric tons of CO2e
-    # Wood:
-    # 100 metric tons = 5.59 metric tons of CO2e
+    #
+    # Source          Amount                Estimate (metric tons of CO2e)
+    # Electricity     100000 kWh                   537.5
+    # Natural Gas     1000000 therms               5420.93
+    # Heating Oil     100000 US gallons            960.69
+    # Coal            100 metric tons              284.67
+    # LP Gas          100000 therms                628.63
+    # Propane         100000 US gallons            568.64
+    # Wood            100 metric tons              5.59
+
 
 
     # co2e for different power sources, unit: tonnes CO2e/GWh
@@ -51,7 +46,8 @@ module Co2Output
     # Coal               Various generator types without scrubbing              1050
 
     # Final numbers, using lowest number for each source
-
+     
+    #unit: (gCO2e/kWh)
     co2_energy_sources = {
       "Wind": 9,
       "Hydroelectric": 10,
@@ -71,6 +67,23 @@ module Co2Output
       "Coal": 960
     }
 
+1 metric tonnes = 1 000 000 grams
+
+    #unit: (gCO2e/kWh)
+    co2_carbon_sources = {
+    Natural Gas:
+    1000000 therms = 5420.93 metric tons of CO2e
+    Heating Oil:
+    100000 US gallons = 960.69 metric tons of CO2e
+    Coal:
+    100 metric tons = 284.67 metric tons of CO2e
+    LP Gas:
+    100000 therms = 628.63 metric tons of CO2e
+    Propane:
+    100000 US gallons = 568.64 metric tons of CO2e
+    Wood:
+    100 metric tons = 5.59 metric tons of CO2e
+    }
 
 
 
