@@ -16,17 +16,17 @@ class FootprintsController < ApplicationController
     params.require(:footprint).permit(
       :energy_source,
       carbon_sources: [
-		"gallons of Heating Oil",
-		"gallons of Propane",
-		"kilowatt-hours of Electricity",
-		"metric tons of Coal",
-		"metric tons of Wood",
-		"therms of LP Gas",
-		"therms of Natural Gas",
-		"pounds of Meat",
-		"gallons of Gasoline",
-		"miles in a Taxi",
-		"miles on a Bus"
+        "gallons of Heating Oil",
+        "gallons of Propane",
+        "kilowatt-hours of Electricity",
+        "metric tons of Coal",
+        "metric tons of Wood",
+        "therms of LP Gas",
+        "therms of Natural Gas",
+        "pounds of Meat",
+        "gallons of Gasoline",
+        "miles in a Taxi",
+        "miles on a Bus"
       ]
     )
   end
