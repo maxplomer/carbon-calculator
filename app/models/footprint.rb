@@ -8,8 +8,8 @@ class Footprint < ActiveRecord::Base
   belongs_to :user
 
 
-  def self.generate_co2_output
-    Co2Output::calculate_co2_output(self)
+  def self.generate_co2_output(footprint)
+    Co2Output::calculate_co2_output(footprint)
   end
 
   def formatted_created_at
@@ -31,7 +31,7 @@ class Footprint < ActiveRecord::Base
   private
 
   def ensure_co2_output
-    self.co2_output ||= self.class.generate_co2_output
+    self.co2_output ||= self.class.generate_co2_output(self)
   end
 
 end
