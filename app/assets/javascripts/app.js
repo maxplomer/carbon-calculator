@@ -51,7 +51,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.j
           controller: 'ProgressCtrl',
           resolve: {
             postPromise: ['posts', function(posts){
-              return posts.getMyPosts();
+              return posts.getMyFootprints();
             }]
           },
           onEnter: ['$state', 'Auth', function($state, Auth) {
