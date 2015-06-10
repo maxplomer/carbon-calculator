@@ -37,41 +37,59 @@ angular.module('carbonCalculator')
         console.log(points, evt);
       };
 
-      var data2 = [
-        {
-          label: 'My First dataset',
-          strokeColor: '#F16220',
-          pointColor: '#F16220',
-          pointStrokeColor: '#fff',
-          data: [
-            { x: 19, y: 65 }, 
-            { x: 27, y: 59 }, 
-            { x: 28, y: 69 }, 
-            { x: 40, y: 81 },
-            { x: 48, y: 56 }
-          ]
-        },
-        {
-          label: 'My Second dataset',
-          strokeColor: '#007ACC',
-          pointColor: '#007ACC',
-          pointStrokeColor: '#fff',
-          data: [
-            { x: 19, y: 75 }, 
-            { x: 27, y: 69 }, 
-            { x: 28, y: 70 }, 
-            { x: 40, y: 31 },
-            { x: 48, y: 76 }, 
-            { x: 52, y: 23 }, 
-            { x: 24, y: 32 }
-          ]
-        }
-      ];
-      var options = {};
+      $scope.drawScatter = function() {
+        Chart.defaults.global.responsive = true;
+        Chart.defaults.global.animation = false;
 
-      // Get the context of the canvas element we want to select
-      var ctx = document.getElementById("myChart").getContext("2d");
-      var mychart = new Chart(ctx).Scatter(data2, options);
+        $(function () {
+
+          var data3 = [
+            {
+              label: 'temperature',
+              strokeColor: '#A31515',
+              data: [
+                {
+                  x: new Date('2011-04-11T11:45:00'),
+                  y: 25
+                },
+                {
+                  x: new Date('2011-04-11T12:51:00'),
+                  y: 28
+                },
+                {
+                  x: new Date('2011-04-11T14:10:00'),
+                  y: 22
+                },
+                {
+                  x: new Date('2011-04-11T15:15:00'),
+                  y: 18
+                },
+                {
+                  x: new Date('2011-04-11T17:00:00'),
+                  y: 25
+                },
+                {
+                  x: new Date('2011-04-11T21:00:00'),
+                  y: 24
+                },
+                {
+                  x: new Date('2011-04-12T13:00:00'),
+                  y: 24
+                }
+              ]
+            }];
+
+          var ctx2 = document.getElementById("myChartWithDates").getContext("2d");
+          var myDateLineChart = new Chart(ctx2).Scatter(data3, {
+            bezierCurve: true,
+            showTooltips: true,
+            scaleShowHorizontalLines: true,
+            scaleShowLabels: true,
+            scaleType: "date",
+            scaleLabel: "<%=value%> deg C"
+          });
+        });
+      };
       
     }
   ]);
