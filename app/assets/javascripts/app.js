@@ -11,7 +11,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.j
           controller: 'MainCtrl',
           resolve: {
             postPromise: ['posts', function(posts){
-              return posts.getAll();
+              return posts.getRecentFootprints();
             }]
           },
           onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -36,7 +36,7 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.j
           controller: 'DashboardCtrl',
           resolve: {
             postPromise: ['posts', function(posts){
-              return posts.getMyPosts();
+              return posts.getMyFootprints();
             }]
           },
           onEnter: ['$state', 'Auth', function($state, Auth) {

@@ -94,7 +94,7 @@ angular.module('carbonCalculator')
       };
 
       //old data structure
-      $scope.posts = posts.posts;
+      $scope.posts = posts.footprints;
       $scope.addPost = function(){
         posts.create({
           gal_of_gas_per_day: $scope.gal_of_gas_per_day,
