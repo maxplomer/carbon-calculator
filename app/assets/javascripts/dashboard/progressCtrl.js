@@ -24,10 +24,10 @@ angular.module('carbonCalculator')
         angular.forEach($scope.footprints, function(footprint) {
           var c = footprint.co2_output;
           if ($scope.logScale) { c = Math.log(c) }
-          $scope.myData.push(Math.round(c));
+          $scope.myData.unshift(Math.round(c));
           var d = new Date(footprint.created_at);
-          $scope.myDates.push(d);
-          $scope.myLabels.push("label");
+          $scope.myDates.unshift(d);
+          $scope.myLabels.unshift("label");
         });
 
         $scope.data = [$scope.myData]
