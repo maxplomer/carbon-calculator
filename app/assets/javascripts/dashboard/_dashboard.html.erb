@@ -55,12 +55,12 @@
           </a>
         </th>
       </tr>
-      <tr ng-repeat="post in posts | orderBy:sortMethod" class="leaderboard-middle-row">
-        <td>{{post.formatted_created_at}}</td>
-        <td>{{post.formatted_updated_at}}</td>
+      <tr ng-repeat="footprint in footprints | orderBy:sortMethod" class="leaderboard-middle-row">
+        <td>{{footprint.formatted_created_at}}</td>
+        <td>{{footprint.formatted_updated_at}}</td>
         <td>
-          {{post.co2_output}} &nbsp;
-          <a href="#/posts/{{post.id}}"><i class="fa fa-external-link-square"></i></a>
+          {{footprint.co2_output}} &nbsp;
+          <a href="#/footprints/{{footprint.id}}"><i class="fa fa-external-link-square"></i></a>
         </td>
       </tr>
     </table>

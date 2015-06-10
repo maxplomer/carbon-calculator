@@ -6,7 +6,7 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
-      $scope.posts = posts.footprints;
+      $scope.footprints = posts.footprints;
 
       var sortMethods = {
         '-id': 'Id', 
