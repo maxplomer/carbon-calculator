@@ -6,9 +6,67 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
-      $scope.logScale = true;
-
       $scope.footprints = posts.footprints;
+
+      //scatterplot graph
+
+      var drawScatter = function() {
+        Chart.defaults.global.responsive = true;
+        Chart.defaults.global.animation = false;
+
+
+
+        var data3 = [
+          {
+            label: 'temperature',
+            strokeColor: '#A31515',
+            data: [
+              {
+                x: new Date('2011-04-11T11:45:00'),
+                y: 25
+              },
+              {
+                x: new Date('2011-04-11T12:51:00'),
+                y: 28
+              },
+              {
+                x: new Date('2011-04-11T14:10:00'),
+                y: 22
+              },
+              {
+                x: new Date('2011-04-11T15:15:00'),
+                y: 18
+              },
+              {
+                x: new Date('2011-04-11T17:00:00'),
+                y: 25
+              },
+              {
+                x: new Date('2011-04-11T21:00:00'),
+                y: 24
+              },
+              {
+                x: new Date('2011-04-12T13:00:00'),
+                y: 24
+              }
+            ]
+          }];
+
+        var ctx2 = document.getElementById("myChartWithDates").getContext("2d");
+        var myDateLineChart = new Chart(ctx2).Scatter(data3, {
+          bezierCurve: true,
+          showTooltips: true,
+          scaleShowHorizontalLines: true,
+          scaleShowLabels: true,
+          scaleType: "date",
+          scaleLabel: "<%=value%> deg C"
+        });
+
+      };
+      drawScatter();
+
+      //angular charts graph
+      $scope.logScale = true;
 
       //$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
       $scope.series = ['Daily Average Footprints'];
@@ -37,60 +95,6 @@ angular.module('carbonCalculator')
         console.log(points, evt);
       };
 
-      $scope.drawScatter = function() {
-        Chart.defaults.global.responsive = true;
-        Chart.defaults.global.animation = false;
-
-        $(function () {
-
-          var data3 = [
-            {
-              label: 'temperature',
-              strokeColor: '#A31515',
-              data: [
-                {
-                  x: new Date('2011-04-11T11:45:00'),
-                  y: 25
-                },
-                {
-                  x: new Date('2011-04-11T12:51:00'),
-                  y: 28
-                },
-                {
-                  x: new Date('2011-04-11T14:10:00'),
-                  y: 22
-                },
-                {
-                  x: new Date('2011-04-11T15:15:00'),
-                  y: 18
-                },
-                {
-                  x: new Date('2011-04-11T17:00:00'),
-                  y: 25
-                },
-                {
-                  x: new Date('2011-04-11T21:00:00'),
-                  y: 24
-                },
-                {
-                  x: new Date('2011-04-12T13:00:00'),
-                  y: 24
-                }
-              ]
-            }];
-
-          var ctx2 = document.getElementById("myChartWithDates").getContext("2d");
-          var myDateLineChart = new Chart(ctx2).Scatter(data3, {
-            bezierCurve: true,
-            showTooltips: true,
-            scaleShowHorizontalLines: true,
-            scaleShowLabels: true,
-            scaleType: "date",
-            scaleLabel: "<%=value%> deg C"
-          });
-        });
-      };
-      
     }
   ]);
 
