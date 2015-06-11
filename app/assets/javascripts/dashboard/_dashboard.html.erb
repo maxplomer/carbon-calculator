@@ -23,61 +23,8 @@
       <li style="padding-bottom:50px"><a href="#/progress"><i class="fa fa-area-chart"></i> Progress</a></li>
     </ul>
   </div>
-  
-  <div class="col-md-8" ng-show="stateName == 'dashboard'">
-    <a class="new-footprint" data-toggle="tooltip" data-placement="left" title="New footprint" ng-click="newFootprint();"><i class="fa fa-plus-square-o"></i></a>
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
-    </script>
-    <h4 class="dashboard-h4">My Footprints</h4>
-    <table class="table table-condensed" id="leaderboard-table">
-      <tr id="leaderboard-top-row">
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodId }}" href="#" ng-click="changeSortMethod('-id')">
-          Created at 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodId_ASC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodId_DESC }}"></i>
-          </a>
-        </th>
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodUpdatedAt }}" href="#" ng-click="changeSortMethod('-updated_at_id')">
-          Updated at 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodUpdatedAt_ASC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodUpdatedAt_DESC }}"></i>
-          </a>
-        </th>
-        <th class="col-md-3">
-          <a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">
-          CO<sub>2</sub>e output 
-          <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodCo2Output_ASC }}"></i>
-          <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodCo2Output_DESC }}"></i>
-          </a>
-        </th>
-      </tr>
-      <tr ng-repeat="footprint in footprints | orderBy:sortMethod" class="leaderboard-middle-row">
-        <td>{{footprint.formatted_created_at}}</td>
-        <td>{{footprint.formatted_updated_at}}</td>
-        <td>
-          {{footprint.co2_output}} g &nbsp;
-          <a href="#/footprints/{{footprint.id}}"><i class="fa fa-external-link-square"></i></a>
-        </td>
-      </tr>
-    </table>
-  </div>
 
-  <div class="col-md-8" ng-show="stateName == 'progress'">
-    <h4 class="dashboard-h4">Output of CO<sub>2</sub>e </h4>
-    <div style="width:100%; margin:auto;">
-      <canvas id="myChartWithDates"></canvas>
-    </div>
-    <br><br>
-    <button ng-click="drawScatter('week')">week</button>
-    <button ng-click="drawScatter('month')">month</button>
-    <button ng-click="drawScatter('year')">year</button>
-    <button ng-click="drawScatter('all')">all</button>
-  </div>
+  <div class="col-md-8" ng-include="partial"></div>
 
 </section>
 

@@ -6,13 +6,13 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
-      // var templates = {
-      //   "dashboard": "dashboard/_myfootprints.html", 
-      //   "progress": "dashboard/_progress.html"
-      // }
+      var templates = {
+        "dashboard": "dashboard/_myfootprints.html", 
+        "progress": "dashboard/_progress.html"
+      }
 
-      $scope.stateName = $state.current.name;
-      //$scope.partial = templates[stateName];
+      var stateName = $state.current.name;
+      $scope.partial = templates[stateName];
 
       $scope.footprints = posts.footprints;
 
@@ -173,8 +173,10 @@ angular.module('carbonCalculator')
         });
 
       };
-      if ($scope.stateName == 'progress') {
-        $scope.drawScatter('all');
+      if (stateName == 'progress') {
+        setTimeout(function() { 
+          $scope.drawScatter('all'); 
+        }, 1);
       }
 
       //Auth
