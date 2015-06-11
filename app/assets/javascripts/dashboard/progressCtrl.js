@@ -6,9 +6,23 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
-      $scope.footprints = posts.footprints;
-
       //scatterplot graph
+
+      var getData = function() {
+        var result = [{
+                x: new Date('2011-04-11T17:00:00'),
+                y: 25
+              }];
+
+        angular.forEach(posts.footprints, function(footprint) {
+          result.unshift({
+            x: new Date(footprint.created_at),
+            y: Math.floor(footprint.co2_output / 1000)
+          })
+        });
+
+        return result;
+      };
 
       var drawScatter = function() {
         Chart.defaults.global.responsive = true;
@@ -18,38 +32,9 @@ angular.module('carbonCalculator')
 
         var data3 = [
           {
-            label: 'temperature',
+            label: 'daily average footprint',
             strokeColor: '#A31515',
-            data: [
-              {
-                x: new Date('2011-04-11T11:45:00'),
-                y: 25
-              },
-              {
-                x: new Date('2011-04-11T12:51:00'),
-                y: 28
-              },
-              {
-                x: new Date('2011-04-11T14:10:00'),
-                y: 22
-              },
-              {
-                x: new Date('2011-04-11T15:15:00'),
-                y: 18
-              },
-              {
-                x: new Date('2011-04-11T17:00:00'),
-                y: 25
-              },
-              {
-                x: new Date('2011-04-11T21:00:00'),
-                y: 24
-              },
-              {
-                x: new Date('2011-04-12T13:00:00'),
-                y: 24
-              }
-            ]
+            data: getData()
           }];
 
         var ctx2 = document.getElementById("myChartWithDates").getContext("2d");
@@ -59,7 +44,7 @@ angular.module('carbonCalculator')
           scaleShowHorizontalLines: true,
           scaleShowLabels: true,
           scaleType: "date",
-          scaleLabel: "<%=value%> deg C"
+          scaleLabel: "<%=value%> kg"
         });
 
       };
