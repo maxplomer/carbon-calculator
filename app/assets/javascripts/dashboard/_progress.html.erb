@@ -5,29 +5,3 @@ PROGRESS
 <div style="width:80%; margin:auto;">
   <canvas id="myChartWithDates"></canvas>
 </div>
-
-<br><br>
-
-{{ myData }}
-
-<br><br>
-
-{{ myDates }}
-
-<br><br><br>
-
-
-<br><br>
-
-
-
-<div style="width:80%; margin:auto;">
-  <canvas id="line" class="chart chart-line" data="data"
-    labels="labels" legend="true" series="series"
-    click="onClick">
-  </canvas> 
-</div>
-
-<br><br>
-{{ logScale }}<br>
-<button ng-click="logScale = !logScale; setGraphData();">Log Scale</button>
