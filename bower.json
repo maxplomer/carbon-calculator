@@ -16,7 +16,8 @@
   "dependencies": {
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.4",
-    "angular-devise": "~1.1.0"
+    "angular-devise": "~1.1.0",
+    "angular-nvd3": "~0.1.1"
   },
   "resolutions": {
     "angular-devise": "~1.1.0"
