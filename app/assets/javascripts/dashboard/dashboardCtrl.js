@@ -6,6 +6,9 @@ angular.module('carbonCalculator')
     'posts',
     function($scope, $state, Auth, posts) {
 
+      //$scope.Url = $state.current.Url;
+      console.log($state.current)
+
       $scope.footprints = posts.footprints;
 
       //set initial values
@@ -95,6 +98,10 @@ angular.module('carbonCalculator')
 
 
 
+
+
+
+
       //scatterplot graph
 
       var _MS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -121,7 +128,7 @@ angular.module('carbonCalculator')
 
         angular.forEach(posts.footprints, function(footprint) {
           var d = new Date(footprint.created_at);
-          console.log(dateDiffInDays(d, lastestDate))
+
           if (dateDiffInDays(d, lastestDate) < timeRanges[timeRange]) {
             result.unshift({
               x: d,

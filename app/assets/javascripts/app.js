@@ -47,8 +47,8 @@ angular.module('carbonCalculator', ['ui.router', 'templates', 'Devise', 'chart.j
         })
         .state('progress', {
           url: '/progress',
-          templateUrl: 'dashboard/_progress.html',
-          controller: 'ProgressCtrl',
+          templateUrl: 'dashboard/_dashboard.html',
+          controller: 'DashboardCtrl',
           resolve: {
             postPromise: ['posts', function(posts){
               return posts.getMyFootprints();
