@@ -8,13 +8,13 @@ angular.module('carbonCalculator')
 
       //scatterplot graph
 
-      var getData = function() {
+      var getData = function(offset) {
         var result = [];
 
         angular.forEach(posts.footprints, function(footprint) {
           result.unshift({
             x: new Date(footprint.created_at),
-            y: footprint.co2_output
+            y: footprint.co2_output + offset
           })
         });
 
@@ -23,13 +23,18 @@ angular.module('carbonCalculator')
 
       var drawScatter = function() {
         Chart.defaults.global.responsive = true;
-        Chart.defaults.global.animation = false;
+        Chart.defaults.global.animation = true;
 
         var data = [
           {
             label: 'daily average footprint',
             strokeColor: '#A31515',
-            data: getData()
+            data: getData(0)
+          },
+          {
+            label: 'airplane flight footprint',
+            strokeColor: 'blue',
+            data: getData(99999)
           }];
 
         var ctx2 = document.getElementById("myChartWithDates").getContext("2d");
