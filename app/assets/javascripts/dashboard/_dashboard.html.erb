@@ -49,7 +49,7 @@
         </th>
         <th class="col-md-3">
           <a class="leaderboard-th-a sorting-{{ sortMethodCo2Output}}" href="#" ng-click="changeSortMethod('-co2_output')">
-          CO<sub>2</sub> output 
+          CO<sub>2</sub>e output 
           <i class="fa fa-sort-asc sorting-arrow-{{ sortMethodCo2Output_ASC }}"></i>
           <i class="fa fa-sort-desc sorting-arrow-{{ sortMethodCo2Output_DESC }}"></i>
           </a>
@@ -59,7 +59,7 @@
         <td>{{footprint.formatted_created_at}}</td>
         <td>{{footprint.formatted_updated_at}}</td>
         <td>
-          {{footprint.co2_output}} &nbsp;
+          {{footprint.co2_output}} g &nbsp;
           <a href="#/footprints/{{footprint.id}}"><i class="fa fa-external-link-square"></i></a>
         </td>
       </tr>
