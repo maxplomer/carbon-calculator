@@ -175,7 +175,7 @@ angular.module('carbonCalculator')
       };
       if (stateName == 'progress') {
         setTimeout(function() { 
-          $scope.drawScatter('all'); 
+          $scope.drawScatter('year'); 
         }, 1);
       }
 
